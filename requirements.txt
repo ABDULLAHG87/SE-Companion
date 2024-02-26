@@ -1,0 +1,14 @@
+Flask
+Flask SQAlchemy
+Flask-WTF
+Flask-Login
+Flask-Bcrypt
+Flask-Migrate
+Flask-Script
+Flask-Mail
+Flask-Bootstrap
+mysqlclient 
+Flask-User
+Flask-RESTful
+gunicorn
+Nginx
