@@ -6,6 +6,15 @@ from secompanion.apps.forms import LoginForm, RegistrationForm
 from secompanion.apps.models import User, db
 from flask_migrate import Migrate
 
+
+#libraries for email sending
+import secrets
+import string
+import smtplib
+from email.mime.text import MIMEText
+
+import apps.methods as methods
+
 app = Flask(__name__, template_folder='apps/templates')
 app.config['SECRET_KEY'] = b'8\xc6\xef\xd8\x82\xf86\xe5R\x10\xb3\x9f\xb8k\xf0{\x88-\xc4\xde\x8eQ\x05;'
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -36,26 +45,29 @@ def login():
         user = User.query.filter_by(email=form.email.data).first()
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember.data)
-            return redirect(url_for('profile'))
+            return redirect(url_for('dashboard'))
         else:
             flash('Invalid email or password', 'error')
     return render_template('login.html', form=form)
 
-@app.route('/forgot_password')
-def forgot_password():
-    # Logic to handle forgot password functionality
-    return render_template('forgot_password.html')
+# Route to handle form submission
+@app.route('/forgot_password', methods=['POST'])
+def handle_forgot_password():
+    email = request.form['email']
+    # Generate a unique token for password reset
+    token = ''.join(secrets.choice(string.ascii_letters + string.digits) for i in range(16))
+    # Send password reset email
+    methods.send_password_reset_email(email, token)
+    flash('Password reset instructions sent to your email.', 'success')
+    return redirect(url_for('forgot_password'))
 
-@app.route('/reset_password', methods=['POST'])
-def reset_password():
-    # Logic to handle password reset
-    # Retrieve the email address from the form data
-    email = request.form.get('email')
-    
-    # Now you can generate a password reset link and send it to the user's email address
-    # You can also add additional validation and error handling here
-    
-    return render_template('password_reset_confirmation.html', email=email)
+# Route for password reset page
+@app.route('/reset_password/<token>', methods=['GET'])
+def reset_password(token):
+    #logic to handle password reset
+    # Render the HTML page for password reset
+    return render_template('reset_password.html', token=token)
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -67,12 +79,18 @@ def register():
             flash('Account already exists. Please log in.', 'error')
         else:
             # Create a new user account
-            new_user = User(email=form.email.data, password=form.password.data)
+            new_user = User(username=form.username.data, email=form.email.data, password=form.password.data)
             db.session.add(new_user)
             db.session.commit()
             flash('Your account has been created successfully!', 'success')
             return redirect(url_for('login'))  # Redirect to the login page after successful registration
     return render_template('register.html', form=form)
+
+
+@app.route('/dashboard', methods=['GET','POST'])
+def dashboard():
+    return render_template('dashboard.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

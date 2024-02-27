@@ -6,8 +6,6 @@ from sqlalchemy import Column, Integer, String
 from flask_sqlalchemy import SQLAlchemy
 
 
-
-
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     # this code below is for the sql command
