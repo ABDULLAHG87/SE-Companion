@@ -1,5 +1,3 @@
-<!-- register.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,13 +28,26 @@
                         <form method="POST">
                             {{ form.hidden_tag() }}
                             <div class="form-group">
-                                {{ form.email.label }} {{ form.email(class="form-control") }}
+                                <label for="username">Username:</label>
+                                <input type="text" id="username" name="username" class="form-control">
                             </div>
                             <div class="form-group">
-                                {{ form.password.label }} {{ form.password(class="form-control") }}
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control">
                             </div>
                             <div class="form-group">
-                                {{ form.confirm_password.label }} {{ form.confirm_password(class="form-control") }}
+                                <label for="password">Password:</label>
+                                <div class="input-group">
+                                    <input type="password" id="password" name="password" class="form-control">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="togglePasswordVisibility()">👁️</button>
+                                    </div>
+                                </div>
+                                <div id="passwordStatus" style="color: red;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm_password">Confirm Password:</label>
+                                <input type="password" id="confirm_password" name="confirm_password" class="form-control">
                             </div>
                             <button type="submit" class="btn btn-primary">{{ form.submit.label }}</button>
                         </form>
@@ -45,5 +56,60 @@
             </div>
         </div>
     </div>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+            var passwordType = passwordField.getAttribute("type");
+            if (passwordType === "password") {
+                passwordField.setAttribute("type", "text");
+            } else {
+                passwordField.setAttribute("type", "password");
+            }
+        }
+
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var statusDiv = document.getElementById("passwordStatus");
+
+            // Regular expressions for password criteria
+            var uppercaseRegex = /[A-Z]/;
+            var specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+            var lowercaseRegex = /[a-z]/;
+            var numberRegex = /[0-9]/;
+
+            // Check each criteria and update status div accordingly
+            var checklist = [];
+            if (uppercaseRegex.test(password)) {
+                checklist.push("✓ At least one uppercase character");
+            } else {
+                checklist.push("✗ At least one uppercase character");
+            }
+            if (specialCharRegex.test(password)) {
+                checklist.push("✓ At least one special character");
+            } else {
+                checklist.push("✗ At least one special character");
+            }
+            if (lowercaseRegex.test(password)) {
+                checklist.push("✓ At least one lowercase character");
+            } else {
+                checklist.push("✗ At least one lowercase character");
+            }
+            if (numberRegex.test(password)) {
+                checklist.push("✓ At least one number");
+            } else {
+                checklist.push("✗ At least one number");
+            }
+
+            statusDiv.innerHTML = checklist.join("<br>");
+            if (checklist.every(item => item.includes("✓"))) {
+                statusDiv.style.color = "green";
+            } else {
+                statusDiv.style.color = "red";
+            }
+        }
+
+        // Add event listener to validate password on input
+        document.getElementById("password").addEventListener("input", validatePassword);
+    </script>
 </body>
 </html>

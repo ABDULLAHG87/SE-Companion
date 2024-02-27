@@ -61,14 +61,17 @@ def reset_password():
 def register():
     form = RegistrationForm()  # You'll need to create a registration form class
     if form.validate_on_submit():
-        # Logic to create a new user account
-        # For example:
-        new_user = User(email=form.email.data, password=form.password.data)
-        db.session.add(new_user)
-        db.session.commit()
-        flash('Your account has been created successfully!', 'success')
-        
-        return redirect(url_for('login'))  # Redirect to the login page after successful registration
+        # Check if the user already exists in the database
+        existing_user = User.query.filter_by(email=form.email.data).first()
+        if existing_user:
+            flash('Account already exists. Please log in.', 'error')
+        else:
+            # Create a new user account
+            new_user = User(email=form.email.data, password=form.password.data)
+            db.session.add(new_user)
+            db.session.commit()
+            flash('Your account has been created successfully!', 'success')
+            return redirect(url_for('login'))  # Redirect to the login page after successful registration
     return render_template('register.html', form=form)
 
 if __name__ == '__main__':
