@@ -10,11 +10,15 @@ from flask_sqlalchemy import SQLAlchemy
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
-
-    id = Column(Integer, primary_key=True)
-    email = Column(String(100), unique=True, nullable=False)
-    password_hash = Column(String(128), nullable=False)
-
+    # this code below is for the sql command
+    # id = Column(Integer, primary_key=True)
+    # email = Column(String(100), unique=True, nullable=False)
+    # password_hash = Column(String(256), nullable=False)
+    
+    #This code works for the mysql database
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(100), unique=True, nullable=False)
+    password_hash = db.Column(db.String(256), nullable=False)  # Increase the length of the column
     def __init__(self, email, password):
         self.email = email
         self.password_hash = generate_password_hash(password)
