@@ -5,21 +5,29 @@ from flask_login import LoginManager, login_user, UserMixin
 from secompanion.apps.forms import LoginForm, RegistrationForm
 from secompanion.apps.models import User, db
 from flask_migrate import Migrate
-
-
-#libraries for email sending
+from flask_mail import Mail, Message  # Import necessary modules
+from secompanion.apps.forms import ForgotPasswordForm
 import secrets
 import string
-import smtplib
-from email.mime.text import MIMEText
 
-import apps.methods as methods
+
+# Import the function for sending password reset email
+from secompanion.apps.methods import send_password_reset_email
 
 app = Flask(__name__, template_folder='apps/templates')
+
+# Configure Flask-Mail with your email server settings
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = 'hakeemabdullah87@gmail.com'  # Update with your Gmail address
+app.config['MAIL_PASSWORD'] = 'abdul4prof87'  # Update with your Gmail app password or account password if less secure apps are enabled
+
+mail = Mail(app)  # Initialize Flask-Mail
+
 app.config['SECRET_KEY'] = b'8\xc6\xef\xd8\x82\xf86\xe5R\x10\xb3\x9f\xb8k\xf0{\x88-\xc4\xde\x8eQ\x05;'
 basedir = os.path.abspath(os.path.dirname(__file__))
-#Using the SQLite
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:abdul4prof@localhost/secompanion'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SESSION_TYPE'] = 'filesystem'
@@ -51,15 +59,24 @@ def login():
     return render_template('login.html', form=form)
 
 # Route to handle form submission
-@app.route('/forgot_password', methods=['POST'])
+@app.route('/forgot_password', methods=['GET', 'POST'], endpoint='forgot_password')
 def handle_forgot_password():
-    email = request.form['email']
-    # Generate a unique token for password reset
-    token = ''.join(secrets.choice(string.ascii_letters + string.digits) for i in range(16))
-    # Send password reset email
-    methods.send_password_reset_email(email, token)
-    flash('Password reset instructions sent to your email.', 'success')
-    return redirect(url_for('forgot_password'))
+    form = ForgotPasswordForm()
+    if request.method == 'POST':
+        # Check if 'email' exists in the form data
+        if 'email' in request.form:
+            email = request.form['email']
+            # Generate a unique token for password reset
+            token = ''.join(secrets.choice(string.ascii_letters + string.digits) for i in range(16))
+            # Send password reset email using Flask-Mail
+            send_password_reset_email(email, token)
+            flash('Password reset instructions sent to your email.', 'success')
+            return redirect(url_for('forgot_password'))
+        else:
+            flash('Email not provided.', 'error')
+            return redirect(url_for('forgot_password'))
+    # Render the forgot password form for GET requests
+    return render_template('forgot_password.html', form=form)
 
 # Route for password reset page
 @app.route('/reset_password/<token>', methods=['GET'])

@@ -1,22 +1,22 @@
-import secrets
-import string
-import smtplib
-from email.mime.text import MIMEText
+from flask_mail import Mail, Message
+from flask import Flask
 
+app = Flask(__name__)
+
+# Configure Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'hakeemabdullah87@gmail.com'
+app.config['MAIL_PASSWORD'] = 'abdul4prof87'
+
+mail = Mail(app)
 
 # Function to send password reset email
 def send_password_reset_email(email, token):
-    # Configure email server
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login('hakeemabdullah87@gmail.com', 'abdul4prof87')
-
     # Compose email message
-    msg = MIMEText(f'Click the link to reset your password: http://localhost:5000/reset_password/{token}')
-    msg['Subject'] = 'Password Reset Request'
-    msg['From'] = 'hakeemabdullah87@gmail.com'
-    msg['To'] = email
+    msg = Message('Password Reset Request', sender='hakeemabdullah87@gmail.com', recipients=[email])
+    msg.body = f'Click the link to reset your password: http://localhost:5000/reset_password/{token}'
 
     # Send email
-    server.sendmail('hakeemabdullah87@gmail.com', email, msg.as_string())
-    server.quit()
+    mail.send(msg)
