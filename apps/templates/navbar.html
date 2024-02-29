@@ -1,0 +1,110 @@
+    <!-- Vertical Navbar (Desktop View) -->
+    <nav class="navbar navbar-light bg-dark navbar-vertical d-none d-md-flex">
+        <div class="logo text-center" href="/dashboard">
+            <i class="fas fa-code"></i> <!-- Logo Icon -->
+        </div>
+        <div class="menu-items">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/dashboard" title="Dashboard">
+                        <i class="fas fa-home navbar-icon active-icon"></i> <!-- Dashboard Icon -->
+                    </a>
+                </li>
+                <hr title="resources" class="bg-cyan">
+                <li class="nav-item">
+                    <a class="nav-link" href="/learn_resources" title="Learning Resources">
+                        <i class="fas fa-book navbar-icon"></i> <!-- Book Icon -->
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tools" title="Tools">
+                        <i class="fas fa-tools navbar-icon"></i> <!-- Tools Icon -->
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/curriculum" title="Curriculum">
+                        <i class="fas fa-graduation-cap navbar-icon"></i> <!-- Curriculum Icon -->
+                    </a>
+                </li>
+                <hr title="community" class="bg-cyan">
+                <li class="nav-item">
+                    <a class="nav-link" href="/connect" title="Connect">
+                        <i class="fas fa-users navbar-icon"></i> <!-- Users Icon -->
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile" title="Profile">
+                        <i class="fas fa-user navbar-icon"></i> <!-- User Icon -->
+                    </a>
+                </li>
+                <hr title="exit" class="bg-cyan">
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout" title="Logout">
+                        <i class="fas fa-sign-out-alt navbar-icon"></i> <!-- Logout Icon -->
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+        <!-- Horizontal Navbar (Mobile View) -->
+    <nav class="navbar navbar-light bg-dark navbar-horizontal d-md-none">
+        <div class="logo text-center">
+            <i class="fas fa-code"></i> <!-- Logo Icon -->
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-white"></span> <!-- Apply text-white class here -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-left"> <!-- Added text-left class -->
+                <li class="nav-item">
+                    <a class="nav-link active text-white" href="/dashboard" title="Dashboard"> <!-- Added text-white class -->
+                        <i class="fas fa-home navbar-icon active-icon"></i> <!-- Dashboard Icon -->
+                        <span class="d-inline d-md-none">Dashboard</span>
+                    </a>
+                </li>
+                <hr class="bg-cyan"> <!-- Moved outside of nav-item -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/learn_resources" title="Learning Resources"> <!-- Added text-white class -->
+                        <i class="fas fa-book navbar-icon"></i> <!-- Book Icon -->
+                        <span class="d-inline d-md-none">Learning Resources</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/tools" title="Tools"> <!-- Added text-white class -->
+                        <i class="fas fa-tools navbar-icon"></i> <!-- Tools Icon -->
+                        <span class="d-inline d-md-none">Tools</span>
+                    </a>
+                </li>
+                <hr class="bg-cyan"> <!-- Moved outside of nav-item -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/curriculum" title="Curriculum"> <!-- Added text-white class -->
+                        <i class="fas fa-graduation-cap navbar-icon"></i> <!-- Curriculum Icon -->
+                        <span class="d-inline d-md-none">Curriculum</span>
+                    </a>
+                </li>
+                <hr class="bg-cyan"> <!-- Moved outside of nav-item -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/connect" title="Connect"> <!-- Added text-white class -->
+                        <i class="fas fa-users navbar-icon"></i> <!-- Connect Icon -->
+                        <span class="d-inline d-md-none">Connect</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/profile" title="Profile"> <!-- Added text-white class -->
+                        <i class="fas fa-user navbar-icon"></i> <!-- User Icon -->
+                        <span class="d-inline d-md-none">Profile</span>
+                    </a>
+                </li>
+                <hr class="bg-cyan"> <!-- Moved outside of nav-item -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/logout" title="Logout"> <!-- Added text-white class -->
+                        <i class="fas fa-sign-out-alt navbar-icon"></i> <!-- Logout Icon -->
+                        <span class="d-inline d-md-none">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
