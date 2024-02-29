@@ -2,11 +2,12 @@ import os
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_session import Session
 from flask_login import LoginManager, login_user, UserMixin
-from secompanion.apps.forms import LoginForm, RegistrationForm
+from secompanion.apps.forms import LoginForm, RegistrationForm, ProfileForm
 from secompanion.apps.models import User, db
 from flask_migrate import Migrate
 from flask_mail import Mail, Message  # Import necessary modules
 from secompanion.apps.forms import ForgotPasswordForm
+from werkzeug.utils import secure_filename
 import secrets
 import string
 
@@ -21,10 +22,16 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'hakeemabdullah87@gmail.com'  # Update with your Gmail address
-app.config['MAIL_PASSWORD'] = 'abdul4prof87'  # Update with your Gmail app password or account password if less secure apps are enabled
-
+# Update with your Gmail address
+app.config['MAIL_USERNAME'] = 'hakeemabdullah87@gmail.com' 
+# Update with your Gmail app password or account password if less secure apps
+app.config['MAIL_PASSWORD'] = 'abdul4prof87'  
 mail = Mail(app)  # Initialize Flask-Mail
+
+# Configure upload folder and allowed extensions
+UPLOAD_FOLDER = 'uploads'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app.config['SECRET_KEY'] = b'8\xc6\xef\xd8\x82\xf86\xe5R\x10\xb3\x9f\xb8k\xf0{\x88-\xc4\xde\x8eQ\x05;'
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -100,13 +107,48 @@ def register():
             db.session.add(new_user)
             db.session.commit()
             flash('Your account has been created successfully!', 'success')
-            return redirect(url_for('login'))  # Redirect to the login page after successful registration
+            # Redirect to the login page after successful registration
+            return redirect(url_for('login')) 
     return render_template('register.html', form=form)
 
 
 @app.route('/dashboard', methods=['GET','POST'])
 def dashboard():
     return render_template('dashboard.html')
+
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    form = ProfileForm()
+    if form.validate_on_submit():
+        # Handle file upload
+        if form.photo.data:
+            filename = secure_filename(form.photo.data.filename)
+            form.photo.data.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            flash('Photo uploaded successfully!', 'success')
+        else:
+            # Generate default avatar using first letters of first and last name
+            default_avatar_filename = '{}{}.png'.format(form.first_name.data[0], form.last_name.data[0])
+            default_avatar_path = os.path.join(app.config['UPLOAD_FOLDER'], default_avatar_filename)
+            # Check if default avatar already exists
+            if not os.path.exists(default_avatar_path):
+                # Generate and save default avatar
+                # Here's a simple example using PIL:
+                from PIL import Image, ImageDraw, ImageFont
+                avatar_size = (100, 100)
+                default_avatar = Image.new('RGB', avatar_size, color='white')
+                draw = ImageDraw.Draw(default_avatar)
+                font = ImageFont.load_default()
+                draw.text((25, 25), '{}{}'.format(form.first_name.data[0], form.last_name.data[0]), fill='black', font=font)
+                os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)  # Create uploads directory if it doesn't exist
+                default_avatar.save(default_avatar_path)
+                flash('Default avatar created!', 'info')
+    if form.validate_on_submit():
+        # Here you would typically process the form data, save it to a database, etc.
+        # For demonstration purposes, let's just print the form data.
+        print("Form data:", form.data)
+        return redirect(url_for('index'))
+    return render_template('profile.html', form=form)
+
 
 
 if __name__ == '__main__':
