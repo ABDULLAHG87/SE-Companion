@@ -13,7 +13,7 @@ import string
 
 
 # Import the function for sending password reset email
-from secompanion.apps.methods import send_password_reset_email
+from secompanion.apps.methods import send_password_reset_email, filter_resources
 
 app = Flask(__name__, template_folder='apps/templates')
 
@@ -51,7 +51,7 @@ def load_user(user_id):
 
 @app.route('/')
 def index():
-    return 'Hello, World!'
+    return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -149,7 +149,31 @@ def profile():
         return redirect(url_for('index'))
     return render_template('profile.html', form=form)
 
+# Hardcoded resources
+resources = [
+    {"title": "Resource 1", "type": "Video", "category": "Web Development", "level": "Beginner"},
+    {"title": "Resource 2", "type": "Book", "category": "Data Science", "level": "Intermediate"},
+    {"title": "Resource 3", "type": "Article", "category": "Python Development", "level": "Expert"},
+    # Add more resources as needed
+]
 
+# Categories
+categories = ["Web Development", "Data Science", "Python Development"]
+
+@app.route('/learn_resources', methods=['GET', 'POST'])
+def learn_resources():
+    if request.method == 'POST':
+        search_query = request.form['search']
+        type_filter = request.form.get('type_filter')
+        category_filter = request.form.get('category_filter')
+        level_filter = request.form.get('level_filter')
+        
+        # Pass the resources list to the filter_resources function
+        filtered_resources = filter_resources(search_query, type_filter, category_filter, level_filter, resources)
+        
+        return render_template('learn_resources.html', resources=filtered_resources, categories=categories)
+    
+    return render_template('learn_resources.html', resources=resources, categories=categories)
 
 if __name__ == '__main__':
     app.run(debug=True)

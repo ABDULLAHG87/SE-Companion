@@ -20,3 +20,20 @@ def send_password_reset_email(email, token):
 
     # Send email
     mail.send(msg)
+#function to filter resources in the resources page based on filter or search query
+def filter_resources(search_query, type_filter, category_filter, level_filter,resources):
+    filtered_resources = resources
+    
+    if search_query:
+        filtered_resources = [resource for resource in filtered_resources if search_query.lower() in resource['title'].lower()]
+        
+    if type_filter and type_filter != 'Filter by Type':
+        filtered_resources = [resource for resource in filtered_resources if resource['type'] == type_filter]
+        
+    if category_filter and category_filter != 'Filter by Category':
+        filtered_resources = [resource for resource in filtered_resources if resource['category'] == category_filter]
+        
+    if level_filter and level_filter != 'Filter by Level':
+        filtered_resources = [resource for resource in filtered_resources if resource['level'] == level_filter]
+        
+    return filtered_resources
