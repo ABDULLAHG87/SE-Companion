@@ -1,0 +1,102 @@
+/* Adjust vertical navbar */
+.navbar-vertical {
+    position: fixed;
+    top: 0;
+    /*bottom: 0;*/
+    left: 0;
+    width: 60px; /* Adjust as needed */
+    background-color: #343a40; /* Dark background */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Adjust content area */
+.content-area {
+    padding: 20px;
+    margin-left: 60px; /* Adjust as needed */
+}
+
+/* Navbar icon styles */
+.navbar-icon {
+    font-size: 30px; /* Adjust as needed */
+    color: #ffffff; /* White color */
+}
+
+/* Active icon color */
+.active-icon {
+    color: #007bff; /* Bootstrap primary color */
+}
+
+/* Mobile Navbar */
+@media (max-width: 767px) {
+    .navbar-vertical {
+        display: none;
+    }
+
+    .content-area {
+        margin-left: 0;
+    }
+
+    .navbar-horizontal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        background-color: #f8f9fa;
+        z-index: 1000;
+    }
+}
+
+/* Logo styles */
+.logo {
+    font-size: 30px; /* Adjust as needed */
+    font-weight: bold;
+    margin-bottom: 20px; /* Adjust as needed */
+    color:cyan; /* White color */
+}
+
+/* Menu items for vertical navbar */
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Adjust as needed */
+    color: white
+}
+
+.menu-items .nav-item {
+    margin-bottom: 10px;
+}
+
+/* Body styles */
+body {
+    background-color: #f8f9fa; /* Light background */
+}
+
+/* Custom button styles */
+.btn-custom {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #ffffff; /* White color */
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3; /* Darker shade of primary color */
+}
+
+/* Card styles */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.bg-cyan{
+    background-color:aquamarine;
+}
