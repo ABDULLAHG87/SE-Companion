@@ -15,6 +15,7 @@ import string
 from secompanion.apps.methods import send_password_reset_email, filter_resources
 
 app = Flask(__name__, template_folder='apps/templates')
+app.static_folder = 'apps/static'
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
@@ -138,6 +139,10 @@ def learn_resources():
         filtered_resources = filter_resources(search_query, type_filter, category_filter, level_filter, resources)
         return render_template('dashboard/learn_resources.html', resources=filtered_resources, categories=categories)
     return render_template('dashboard/learn_resources.html', resources=resources, categories=categories)
+
+@app.route('/dashboard/tools')
+def tools():
+    return render_template('dashboard/tools.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

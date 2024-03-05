@@ -1,0 +1,91 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Tools{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5 mb-4 text-center">Software Engineering Tools</h1>
+
+    <!-- Integrated Development Environment -->
+    <section class="bg-light p-4 mb-5">
+        <h2 class="mb-4">Integrated Development Environments (IDE) </h2>
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- Card for Visual Studio Code -->
+                <div class="card mb-4 text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" class="category-thumbnail" alt="Visual Studio Thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Visual Studio Code</h5>
+                        <p class="card-text">Visual Studio Code: A lightweight yet powerful code editor designed for optimal productivity and seamless integration with a wide range of programming languages and frameworks</p>
+                        <a href="https://code.visualstudio.com/download" class="btn btn-primary" target="_blank">Download</a>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-lg-4">
+                <!-- Card for Sublime Text -->
+                <div class="card mb-4 text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Breezeicons-apps-48-sublime-text.svg" class="category-thumbnail" alt="Sublime Thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Sublime Text</h5>
+                        <p class="card-text">Sublime Text: A lightning-fast, highly customizable code editor offering unparalleled speed and flexibility for developers across diverse programming languages and projects.</p>
+                        <a href="https://www.sublimetext.com/download" class="btn btn-primary" target="_blank">Download</a>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-lg-4">
+                <!-- Card for Pycharm Text -->
+                <div class="card mb-4 text-center">
+                    <img src="data:image/jpeg;base64,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" class="category-thumbnail" alt="Sublime Thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Pycharm</h5>
+                        <p class="card-text">PyCharm: A powerful Python IDE with smart code completion, advanced debugging, and seamless version control integration. Ideal for boosting productivity in Python development.</p>
+                        <a href="https://www.jetbrains.com/pycharm/download/?section=windows" class="btn btn-primary" target="_blank">Download</a>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-lg-4">
+                <!-- Card for Intellij -->
+                <div class="card mb-4 text-center">
+                    <img src="/static/img/IntelliJ.png" class="category-thumbnail" alt="Sublime Thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">Intellij</h5>
+                        <p class="card-text">PyCharm: A powerful Python IDE with smart code completion, advanced debugging, and seamless version control integration. Ideal for boosting productivity in Python development.</p>
+                        <a href="https://www.jetbrains.com/pycharm/download/?section=windows" class="btn btn-primary" target="_blank">Download</a>
+                    </div>
+                </div> 
+            </div>
+            <!-- Add more cards for other tools -->
+        </div>
+    </section>
+
+    <!-- Code Collaboration Section -->
+    <section class="bg-light p-4 mb-5">
+        <h2 class="mb-4">Code Collaboration</h2>
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- Card for Slack -->
+                <div class="card mb-4">
+                    <!-- Card content -->
+                </div>
+            </div>
+            <!-- Add more cards for other code collaboration tools -->
+        </div>
+    </section>
+
+    <!-- Project Management Section -->
+    <section class="bg-light p-4 mb-5">
+        <h2 class="mb-4">Project Management</h2>
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- Card for Jira -->
+                <div class="card mb-4">
+                    <!-- Card content -->
+                </div>
+            </div>
+            <!-- Add more cards for other project management tools -->
+        </div>
+    </section>
+
+    <!-- Add more sections for other categories as needed -->
+
+</div>
+{% endblock %}
