@@ -5,8 +5,43 @@
 <div class="container">
     <h1 class="mt-5 mb-4 text-center">Software Engineering Tools</h1>
 
+
+    
+     <!-- Centralized Search Bar -->
+     <div class="row justify-content-center mb-4">
+        <div class="col-md-6 d-flex justify-content-center">
+            <div class="input-group">
+                <input type="text" id="searchBar" class="form-control" placeholder="Search tools...">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Centralized Dropdown Menu -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6 d-flex justify-content-center">
+            <select class="form-select" id="sectionDropdown">
+                <option value=""></option>
+                <option value="#ide">Integrated Development Environments (IDE)</option>
+                <option value="#online-ide">Online Integrated Development Environments (IDE)</option>
+                <option value="#whiteboarding">Whiteboarding and Flowchart Tools</option>
+                <option value="#video-conferencing">Video Conferencing, Collaboration and Virtual Meeting Tools</option>
+                <option value="#team-collaboration">Team Communication and Collaboration</option>
+                <option value="#version-control">Version Control System (VCS)</option>
+                <option value="#project-management">Productivity and Project Management</option>
+                <option value="#knowledge-management">Knowledge Management</option>
+                <option value="#code-challenges">Code Challenges and Communities</option>
+                <option value="#mobile-tools">Mobile Phone Tools</option>
+            </select>
+        </div>
+    </div>
+
     <!-- Integrated Development Environment -->
-    <section class="bg-light p-4 mb-5">
+    <section id='ide' class="bg-light p-4 mb-5">
         <h2 class="mb-4">Integrated Development Environments (IDE) </h2>
         <div class="row">
             <div class="col-lg-4">
@@ -58,7 +93,7 @@
     </section>
 
     <!-- Online Integrated Development Environment -->
-    <section class="bg-light p-4 mb-5">
+    <section id="online-ide" class="bg-light p-4 mb-5">
         <h2 class="mb-4"> Online Integrated Development Environments (IDE) </h2>
         <div class="row">
             <div class="col-lg-4">
@@ -100,7 +135,7 @@
     </section>
 
     <!-- Whiteboarding Tools -->
-    <section class="bg-light p-4 mb-5">
+    <section id="whiteboarding" class="bg-light p-4 mb-5">
         <h2 class="mb-4"> Whiteboarding and flowchart Tools </h2>
         <div class="row">
             <div class="col-lg-4">
@@ -142,7 +177,7 @@
     </section>
 
 <!-- Video Conferencing, collaboration and virtual meetings  -->
-<section class="bg-light p-4 mb-5">
+<section id="video-conferencing" class="bg-light p-4 mb-5">
     <h2 class="mb-4"> Video conferencing, Collaboration and virtual meeting tools </h2>
     <div class="row">
         <div class="col-lg-4">
@@ -185,7 +220,7 @@
 </section>
 
 <!-- Team Communication and Collaboration -->
-<section class="bg-light p-4 mb-5">
+<section id="team-collaboration" class="bg-light p-4 mb-5">
     <h2 class="mb-4"> Team Communication and Collaboration </h2>
     <div class="row">
         <div class="col-lg-4">
@@ -217,7 +252,7 @@
 </section>
 
 <!-- Version Control System (VCS) -->
-<section class="bg-light p-4 mb-5">
+<section id="version-control" class="bg-light p-4 mb-5">
     <h2 class="mb-4"> Version Control System </h2>
     <div class="row">
         <div class="col-lg-4">
@@ -260,7 +295,7 @@
 </section>
 
 <!-- Productivity and Project Management -->
-<section class="bg-light p-4 mb-5">
+<section id="project-management" class="bg-light p-4 mb-5">
     <h2 class="mb-4"> Productivity and Project Management </h2>
     <div class="row">
         <div class="col-lg-4">
@@ -308,10 +343,134 @@
                 </div>
             </div> 
         </div>
-        
+<!-- Knowledge Management  Tools -->
+<section id="knowledge-management" class="bg-light p-4 mb-5">
+    <h2 class="mb-4"> Knowledge Management </h2>
+    <div class="row">
+        <div class="col-lg-4">
+            <!-- Card for Trello -->
+            <div class="card mb-4 text-center">
+                <img src="/static/img/tools/stackoverflow.svg" class="category-thumbnail" alt="stackoverflow Thumbnail">
+                <div class="card-body">
+                    <h5 class="card-title">Stack Overflow</h5>
+                    <p class="card-text">
+                        Stack Overflow is an online Q&A platform tailored for developers and software engineers, facilitating knowledge sharing and collaboration on coding challenges.</p>
+                    <a href="https://stackoverflow.com/" class="btn btn-primary" target="_blank">Sign Up / Login</a>
+                </div>
+            </div> 
+        </div>
+        <div class="col-lg-4">
+            <!-- Card for Bitbucket -->
+            <div class="card mb-4 text-center">
+                <img src="/static/img/tools/freecodecamp.png" class="category-thumbnail" alt="Asana Thumbnail">
+                <div class="card-body">
+                    <h5 class="card-title">Freecodecamp</h5>
+                    <p class="card-text">FreeCodeCamp: Free online platform with coding tutorials, interactive courses, and a supportive community for learners of all levels to improve coding skills and build real-world projects.</p>
+                    <a href="https://www.freecodecamp.org/" class="btn btn-primary" target="_blank">Signup / Login</a>
+                </div>
+            </div> 
+        </div>
+          
         <!-- Add more cards for other tools -->
     </div>
 </section>
 
-</div>
+<!-- Knowledge Management  Tools -->
+<section id="code-challenges" class="bg-light p-4 mb-5">
+    <h2 class="mb-4"> Code Challenges and Communities </h2>
+    <div class="row">
+        <div class="col-lg-4">
+            <!-- Card for Trello -->
+            <div class="card mb-4 text-center">
+                <img src="/static/img/tools/stackoverflow.svg" class="category-thumbnail" alt="stackoverflow Thumbnail">
+                <div class="card-body">
+                    <h5 class="card-title">Stack Overflow</h5>
+                    <p class="card-text">
+                        Stack Overflow is an online Q&A platform tailored for developers and software engineers, facilitating knowledge sharing and collaboration on coding challenges.</p>
+                    <a href="https://stackoverflow.com/" class="btn btn-primary" target="_blank">Sign Up / Login</a>
+                </div>
+            </div> 
+        </div>
+        <div class="col-lg-4">
+            <!-- Card for Bitbucket -->
+            <div class="card mb-4 text-center">
+                <img src="/static/img/tools/freecodecamp.png" class="category-thumbnail" alt="Asana Thumbnail">
+                <div class="card-body">
+                    <h5 class="card-title">Freecodecamp</h5>
+                    <p class="card-text">FreeCodeCamp: Free online platform with coding tutorials, interactive courses, and a supportive community for learners of all levels to improve coding skills and build real-world projects.</p>
+                    <a href="https://www.freecodecamp.org/" class="btn btn-primary" target="_blank">Signup / Login</a>
+                </div>
+            </div> 
+        </div>
+          
+        <!-- Add more cards for other tools -->
+    </div>
+</section>
+
+<!-- Knowledge Management  Tools -->
+<section id="mobile-tools" class="bg-light p-4 mb-5">
+    <h2 class="mb-4">Mobile Phone Tools </h2>
+    <div class="row">
+        <div class="col-lg-4">
+            <!-- Card for Trello -->
+            <div class="card mb-4 text-center">
+                <img src="/static/img/tools/stackoverflow.svg" class="category-thumbnail" alt="stackoverflow Thumbnail">
+                <div class="card-body">
+                    <h5 class="card-title">Stack Overflow</h5>
+                    <p class="card-text">
+                        Stack Overflow is an online Q&A platform tailored for developers and software engineers, facilitating knowledge sharing and collaboration on coding challenges.</p>
+                    <a href="https://stackoverflow.com/" class="btn btn-primary" target="_blank">Sign Up / Login</a>
+                </div>
+            </div> 
+        </div>
+        <div class="col-lg-4">
+            <!-- Card for Bitbucket -->
+            <div class="card mb-4 text-center">
+                <img src="/static/img/tools/freecodecamp.png" class="category-thumbnail" alt="Asana Thumbnail">
+                <div class="card-body">
+                    <h5 class="card-title">Freecodecamp</h5>
+                    <p class="card-text">FreeCodeCamp: Free online platform with coding tutorials, interactive courses, and a supportive community for learners of all levels to improve coding skills and build real-world projects.</p>
+                    <a href="https://www.freecodecamp.org/" class="btn btn-primary" target="_blank">Signup / Login</a>
+                </div>
+            </div> 
+        </div>
+          
+        <!-- Add more cards for other tools -->
+    </div>
+</section>
+
+<script>
+    // Function to filter sections based on search query
+    function filterSections() {
+        var searchQuery = document.getElementById("searchBar").value.toLowerCase();
+        var sections = document.querySelectorAll("section");
+
+        sections.forEach(function(section) {
+            var sectionContent = section.textContent.toLowerCase();
+            var sectionTitle = section.querySelector("h2").textContent.toLowerCase();
+            if (sectionContent.includes(searchQuery) || sectionTitle.includes(searchQuery)) {
+                section.style.display = "block";
+            } else {
+                section.style.display = "none";
+            }
+        });
+    }
+
+    // Function to navigate to selected section from dropdown menu
+    function navigateToSection() {
+        var selectedSection = document.getElementById("sectionDropdown").value;
+        if (selectedSection !== "") {
+            window.location.href = selectedSection;
+        }
+    }
+
+    // Add event listener to search button
+    document.getElementById("searchButton").addEventListener("click", filterSections);
+
+    // Add event listener to search bar for keyup event
+    document.getElementById("searchBar").addEventListener("keyup", filterSections);
+
+    // Add event listener to dropdown menu
+    document.getElementById("sectionDropdown").addEventListener("change", navigateToSection);
+</script>
 {% endblock %}
