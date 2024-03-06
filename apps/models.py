@@ -52,10 +52,12 @@ class Interest(db.Model):
     users = db.relationship('User', secondary=interests_association, backref='user_interests')
     
 class Skill(db.Model):
+    '''Declaration of '''
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True, index=True)
 
 class Resource(db.Model):
+    '''Declaration of resources class inherited from db.model'''
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(128), index=True)
     description = db.Column(db.Text)

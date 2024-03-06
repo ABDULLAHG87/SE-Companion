@@ -14,6 +14,7 @@ mail = Mail(app)
 
 # Function to send password reset email
 def send_password_reset_email(email, token):
+    '''Function that reset password via email'''
     # Compose email message
     msg = Message('Password Reset Request', sender='hakeemabdullah87@gmail.com', recipients=[email])
     msg.body = f'Click the link to reset your password: http://localhost:5000/reset_password/{token}'
