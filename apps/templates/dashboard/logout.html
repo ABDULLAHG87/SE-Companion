@@ -1,0 +1,25 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5 mb-4 text-center">Logout</h1>
+    <h3 class="text-center">Are you sure you want to logout?</h3>
+    <div class="d-flex justify-content-center">
+        <!-- Logout button with confirmation dialog -->
+        <button class="btn btn-danger" id="logoutButton">Logout</button>
+    </div>
+    
+    <!-- JavaScript code for confirmation dialog -->
+    <script>
+        // Function to display confirmation dialog when logout button is clicked
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            // Display confirmation dialog
+            var confirmLogout = confirm('Are you sure you want to logout?');
+            // If user confirms logout, redirect to logout route
+            if (confirmLogout) {
+                window.location.href = "{{ url_for('login') }}";
+            }
+        });
+    </script>
+{% endblock %}

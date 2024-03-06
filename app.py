@@ -144,5 +144,10 @@ def learn_resources():
 def tools():
     return render_template('dashboard/tools.html')
 
+@app.route('/dashboard/logout')
+def logout():
+    session.clear()
+    return render_template('dashboard/logout.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
