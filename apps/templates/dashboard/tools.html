@@ -2,6 +2,17 @@
 {% block title %}Tools{% endblock %}
 
 {% block content %}
+<style>
+    /* Add hover effect for card zoom-out with shadow */
+    .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>
 <div class="container">
     <h1 class="mt-5 mb-4 text-center">Software Engineering Tools</h1>
 
