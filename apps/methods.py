@@ -1,5 +1,9 @@
 from flask_mail import Mail, Message
 from flask import Flask
+import requests
+import random
+
+
 
 app = Flask(__name__)
 
@@ -23,6 +27,7 @@ def send_password_reset_email(email, token):
     mail.send(msg)
 #function to filter resources in the resources page based on filter or search query
 def filter_resources(search_query, type_filter, category_filter, level_filter,resources):
+    '''Function to filter resources based on search query and filters'''
     filtered_resources = resources
     
     if search_query:
@@ -38,3 +43,21 @@ def filter_resources(search_query, type_filter, category_filter, level_filter,re
         filtered_resources = [resource for resource in filtered_resources if resource['level'] == level_filter]
         
     return filtered_resources
+
+def get_daily_quote(category):
+    '''Function to get a random quote from the ZenQuotes API'''
+    try:
+        url = f'https://zenquotes.io/api/quotes/{category}'
+        response = requests.get(url)
+        data = response.json()
+        info = []
+        if data:
+            quote = random.choice(data)
+            return quote
+        else:
+            return None
+    except requests.exceptions.RequestException as e:
+        return None
+    except KeyError as e:
+        return None
+        

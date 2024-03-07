@@ -1,6 +1,7 @@
 import os
+import random
 from flask import Flask, render_template, redirect, url_for, flash, request, session
-from flask_login import current_user
+from flask_login import current_user, login_required
 from flask_session import Session
 from flask_login import LoginManager, login_user, UserMixin
 from secompanion.apps.forms import LoginForm, RegistrationForm, ProfileForm, ForgotPasswordForm
@@ -12,7 +13,7 @@ from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 import secrets
 import string
-from secompanion.apps.methods import send_password_reset_email, filter_resources
+from secompanion.apps.methods import send_password_reset_email, filter_resources, get_daily_quote
 
 app = Flask(__name__, template_folder='apps/templates')
 app.static_folder = 'apps/static'
@@ -99,10 +100,18 @@ def register():
     return render_template('register.html', form=form)
 @app.route('/dashboard/dashboard', methods=['GET','POST'])
 @app.route('/dashboard', methods=['GET','POST'])
+@login_required
 def dashboard():
     #user_id = session.get('user_id')  # Or however you get the user_id
     #print("User ID:", user_id)  # Add this line for debugging
-    return render_template('/dashboard/dashboard.html')
+    categories = ['sucess','productivity','leadership', 'inspiration', 'work', 'time', 'today', 'pain']
+    selected_category = random.choice(categories)
+    quote = get_daily_quote(selected_category)
+    if quote:
+        daily_quotes=quote
+    else:
+        daily_quotes = "No quote found today."
+    return render_template('/dashboard/dashboard.html', username=current_user.username, quote=daily_quotes)
 
 @app.route('/dashboard/profile', methods=['GET', 'POST'])
 def profile():

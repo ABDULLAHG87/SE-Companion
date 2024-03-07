@@ -15,6 +15,7 @@ skills_association = db.Table('skills_association',
 )
 
 class User(UserMixin, db.Model):
+    '''Declaration of user class inherited from db.Model and Flask-Login's UserMixin'''
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
@@ -36,23 +37,27 @@ class User(UserMixin, db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     def __init__(self, username, email, password):
+        '''Method to initialize user object with username, email and password'''
         self.username = username
         self.email = email
         self.password_hash = generate_password_hash(password)
 
     def set_password(self, password):
+        '''Method to set password hash'''
         self.password_hash = generate_password_hash(password)
         
     def check_password(self, password):
+        '''Method to check password against password hash'''
         return check_password_hash(self.password_hash, password)
 
 class Interest(db.Model):
+    '''Declaration of interests class inherited from db.model'''
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True, index=True)
     users = db.relationship('User', secondary=interests_association, backref='user_interests')
     
 class Skill(db.Model):
-    '''Declaration of '''
+    '''Declaration of skills class inherited from db.model'''
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True, index=True)
 
@@ -69,6 +74,7 @@ class Resource(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 class Tool(db.Model):
+    '''Declaration of tool class inherited from db.model'''
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128), index=True)
     description = db.Column(db.Text)
@@ -77,6 +83,7 @@ class Tool(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 class Connection(db.Model):
+    '''Declaration of connection class inherited from db.model'''
     id = db.Column(db.Integer, primary_key=True)
     user1_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user2_id = db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -85,6 +92,7 @@ class Connection(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 class Admin(db.Model):
+    '''Declaration of admin class inherited from db.model'''
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, index=True)
     email = db.Column(db.String(120), unique=True, index=True)

@@ -1,30 +1,130 @@
 {% extends '/dashboard/base.html' %}
 {% block title %}Dashboard{% endblock %}
 
+{% block custom_css %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.css" rel="stylesheet">
+{% endblock %}
 {% block content %}
     <!-- Content Area -->
-    <div class="col-md-12"><h2>SE-Companion</h2></div>
-    <div class="content-area">
-        <h1 class="text-center mb-4">Welcome to the Learning Dashboard</h1>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Dashboard Overview</h5>
-                        <p class="card-text">View your progress, upcoming tasks, and important events.</p>
-                        <a href="#" class="btn btn-custom">View Dashboard</a>
-                    </div>
+    <!--Welcome Message with Username-->
+    <section id="welcome-message">
+        <div class="alert alert-success" role="alert">
+            <h4>Welcome back, {{ username }}!</h4>
+        </div>
+    </section>
+    <!--Daily Quotes that will inspired-->
+    <section id="daily-quote">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text h4 text-center">{{ quote['q'] }}</p>
+                <p class="card-text text-right quote"><em>- {{ quote['a'] }}</em></p>
+            </div>
+        </div>
+    </section>
+    <section id="vision-board">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4>Vision Board</h4>
+                    <p>Hello world</p>
+                </div>
+                <div class="col-md-4 bg-white">
+                    <h4>Calender</h4>
+                    <div id='calendar'></div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Learning Resources</h5>
-                        <p class="card-text">Access a variety of learning materials, courses, and tutorials.</p>
-                        <a href="#" class="btn btn-custom">Explore Resources</a>
+        </div>
+    </section>
+    <!--Quick Links-->
+    <section id="quick-links">
+        <div class="container">
+            <h2 class="mb-4">Quick Links </h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/resources.avif" class="card-img-top" alt="Learning Resources">
+                        <div class="card-body  d-flex flex-column">
+                            <h4 class="card-title">Learning Resources</h4>
+                            <p class="card-text">Empower your learning journey with our comprehensive collection of resources. From tutorials to expert insights, access everything you need to enhance your skills and stay ahead in your field.</p>
+                            <a href="/dashboard/learn_resources" class="btn btn-primary btn-block mt-auto">Explore resources</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/tools.jpg" class="card-img-top" alt="Tools Arsenal">
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title">Tools Arsenal</h4>
+                            <p class="card-text">Fuel your coding endeavors with our curated toolbox. Access top-notch software engineering tools for streamlined development, debugging, and deployment. Elevate your efficiency and unleash your coding potential.</p>
+                            <a href="/dashboard/tools" class="btn btn-primary btn-block mt-auto">Discover tools</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center h-100 d-flex flex-column">
+                        <img src="/static/img/thumbnails/curriculum.jpg" class="card-img-top" alt="Curriculum">
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title text-center">Curriculum</h4>
+                            <p class="card-text">Navigate your learning path with clarity and purpose. Our concise curriculum offers structured guidance, ensuring mastery of key concepts and skills. Accelerate your learning journey and achieve your goals with confidence.</p>
+                            <a href="/dashboard/curriculum" class="btn btn-primary btn-block mt-auto">Access Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/connect.jpg" class="card-img-top" alt="Connect Me">
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title">Connect</h4>
+                            <p class="card-text">Connect with peers to amplify your success. Our platform facilitates meaningful networking opportunities, enabling collaboration, knowledge sharing, and growth together. Forge valuable connections and unlock new possibilities for advancement.</p>
+                            <a href="/dashboard/connect" class="btn btn-primary btn-block mt-auto">Connect me</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+   <!--Featured Resources-->
+   <section id="featured-resources">
+    <div class="container">
+        <h2 class="mb-4">Featured Resources </h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card text-center h-100 d-flex flex-column">
+                    <img src="/static/img/resources/python-beg.jpg" class="card-img-top" alt="python Resources">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Python for Beginners</h5>
+                        <p class="card-text">Learn Python for Beginners" is a concise course introducing Python programming fundamentals. Cover key concepts such as variables, data types, control structures, and functions, perfect for aspiring developers or those new to coding. Kickstart your Python journey with this solid foundation.</p>
+                        <a href="#" class="btn btn-primary btn-block mt-auto">Get started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center h-100 d-flex flex-column">
+                    <img src="/static/img/resources/python-int.jpg" class="card-img-top" alt="Tools Arsenal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Python for Intermediate</h5>
+                        <p class="card-text">Want to deepen your understanding of Python programming. Explore advanced topics such as OOP, file handling, and error handling. Enhance your coding skills with hands-on projects and practical exercises. Ideal for intermediate Python developers looking to tackle more complex coding challenges.</p>
+                        <a href="#" class="btn btn-primary btn-block mt-auto">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center h-100 d-flex flex-column">
+                    <img src="/static/img/resources/python-adv.jpg" class="card-img-top" alt="Curriculum">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Python for Experts</h5>
+                        <p class="card-text">Planning to master advanced Python features such as metaprogramming, concurrency, data science, and machine learning. It will teach you how to build sophisticated applications and tackle complex problems with confidence by delving deep into Python's ecosystem and libraries. Perfect for developers seeking to elevate their Python skills to an expert level.</p>
+                        <a href="#" class="btn btn-primary btn-block mt-auto">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
     </div>
+</section>
+    </div>
+{% endblock %}
+{% block custom_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.js"></script>
+<script src="/static/js/calendar.js"></script>
 {% endblock %}
