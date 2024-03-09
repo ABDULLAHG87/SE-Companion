@@ -86,69 +86,7 @@
             </div>
         </div>
     </section>
-    <section>
-        <div class="container mt-5">
-            <h2>Featured Resources</h2>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fas fa-file-alt fa-3x text-primary"></i> <h5 class="card-title">Documentation</h5>
-                            <p class="card-text">Access comprehensive guides and tutorials to get started.</p>
-                            <a href="#" class="btn btn-primary">Explore Documentation</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <i class="fas fa-play-circle fa-3x text-danger"></i> <h5 class="card-title">Videos</h5>
-                            <p class="card-text">Watch in-depth video tutorials for a visual learning experience.</p>
-                            <a href="#" class="btn btn-danger">Watch Videos</a>
-                        </div>
-                    </div>
-                </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <i class="fas fa-globe fa-3x text-info"></i> <h5 class="card-title">Online Materials</h5>
-                        <p class="card-text">Explore a variety of online resources to supplement your learning.</p>
-                        <a href="#" class="btn btn-info">Explore Online</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <i class="fas fa-podcast fa-3x text-warning"></i> <h5 class="card-title">Podcasts</h5>
-                        <p class="card-text">Listen to informative podcasts while on the go.</p>
-                        <a href="#" class="btn btn-warning">Explore Podcasts</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <i class="fas fa-book fa-3x text-success"></i> <h5 class="card-title">Books</h5>
-                        <p class="card-text">Dive deeper with recommended books for comprehensive learning.</p>
-                        <a href="#" class="btn btn-success">Explore Books</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <i class="far fa-sticky-note fa-3x text-secondary"></i> <h5 class="card-title">Mobile Application</h5>
-                        <p class="card-text">Download our mobile app for learning on the go.</p>
-                        <a href="#" class="btn btn-secondary">Download App</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+    
    <!--Featured Resources-->
    <section id="featured-resources">
     <div class="container">
@@ -188,49 +126,54 @@
         </div>
     </div>
 </section>
+<section id="popular-resources" class="mt-5">
+    <div class="container">
+        <h2 class="mb-4">Popular Resources</h2>
+        <div class="row">
+            <!-- First Popular Resource (Python Programming) -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/static/img/resources/python-1.jpg" class="card-img-top" alt="Python Programming">
+                    <div class="card-body">
+                        <h5 class="card-title">Python Programming</h5>
+                        <p class="card-text">Explore the fundamentals of Python programming with our comprehensive course.</p>
+                        <div class="card-info">
+                            <h5>Comprehensive Information</h5>
+                            <p>This is comprehensive information about Python Programming.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Popular course  JavaScript -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/static/img/resources/javaScript.jpg" class="card-img-top" alt="JavaScript">
+                    <div class="card-body">
+                        <h5 class="card-title">Master JavaScript </h5>
+                        <p class="card-text">Learning JavaScript, you'll gain the skills to manipulate webpage content, respond to user actions, and create engaging web applications. Dive into JavaScript to unlock the potential of client-side scripting and enhance your web development toolkit.".</p>
+                        <button class="btn btn-primary" href="#">Get Started</button>
+                        <div class="card-info">
+                            <h5>Overview of the Course</h5>
+                            <hr>
+                            <p>In this course you would learn the following:</p>
+                            <ul>
+                                <li>Basics of JavaScript</li>
+                                <li>Setting up JavaScript Environment</li>
+                                <li>Write various solutions with Javascript</li>
+                                <li>Build project relevant to Javascript</li>
+                            </ul>
+                            <button class="btn btn-primary" href="#">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more grid columns for other popular resources -->
+        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-$(document).ready(function() {
-  // Function to render vision item
-  function renderVisionItem(title, description) {
-    $('#title').val(title);
-    $('#description').val(description);
-  }
+</section>
 
-  // Check if vision item exists in localStorage
-  var visionItem = JSON.parse(localStorage.getItem('visionItem'));
-  if (visionItem) {
-    renderVisionItem(visionItem.title, visionItem.description);
-  }
 
-  // Save vision item
-  $('#visionForm').submit(function(event) {
-    event.preventDefault();
-    var title = $('#title').val();
-    var description = $('#description').val();
-    var visionItem = { title: title, description: description };
-    localStorage.setItem('visionItem', JSON.stringify(visionItem));
-    renderVisionItem(title, description);
-  });
-
-  // Delete vision item
-  $('#deleteVision').click(function() {
-    localStorage.removeItem('visionItem');
-    $('#title').val('');
-    $('#description').val('');
-  });
-
-  // Clear vision item
-  $('#clearVision').click(function() {
-    $('#title').val('');
-    $('#description').val('');
-  });
-});
-</script>
-{% endblock %}
-{% block custom_js %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.js"></script>
-<script src="/static/js/calendar.js"></script>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 {% endblock %}

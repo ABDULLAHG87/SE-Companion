@@ -148,7 +148,33 @@
             object-fit: contain;
             margin-bottom: 10px;
         }
-        /* Custom styles for the navbar toggler */
+        .card {
+      transition: transform 0.3s;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:hover .card-info {
+      display: block;
+    }
+
+    .card-info {
+      display: none;
+      background-color: rgba(255, 255, 255, 0.9);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 20px;
+    }
+
+    .card-info h5 {
+      margin-bottom: 10px;
+    }
       /* Custom styles for the hero section */
     .hero-section {
       background-image: url('/static/img/hero/learncomfort.jpg');
