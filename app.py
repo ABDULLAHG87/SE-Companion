@@ -153,6 +153,10 @@ def learn_resources():
 def tools():
     return render_template('dashboard/tools.html')
 
+@app.route('/dashboard/overview')
+def overview():
+    return render_template('dashboard/sengineer.html')
+
 @app.route('/dashboard/logout')
 def logout():
     session.clear()

@@ -2,6 +2,28 @@
 {% block title %}Learning Resources{% endblock %}
 
 {% block content %}
+    <!--Application Logo-->
+    <div class="col-md-12 mt-0 text-center">
+        <!--<h1 class="mt-5">Login</h1>-->
+        <img src="/static/img/logo-3.svg" alt="Logo" class="mt-5 mb-5"> 
+    </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Learning Resources</li>
+        </ol>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 mt-0 text-center hero-section res">
+            <div class="hero-content">
+              <h1 class="mt-5">Learning Resources</h1>
+              <p>Empowering Your Journey: Unlocking Knowledge, One Click at a Time</p>
+              <!-- <a href="/dashboard" class="btn btn-primary btn-lg">Get Started</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="container mt-4">
         <!-- Search Bar -->
         <form id="searchForm" method="post">
@@ -16,6 +38,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-md-2">
             <select class="form-control" name="type_filter">
                 <option selected disabled>Filter by Type</option>

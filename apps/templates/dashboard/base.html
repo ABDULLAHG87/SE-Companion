@@ -9,33 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css' rel='stylesheet' />
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var events = [
-        {
-          title: 'Meeting',
-          start: '2024-02-28T10:00:00' 
-        },
-        {
-          title: 'Appointment',
-          start: '2024-02-28T14:00:00'
-        }
-      ];
-
-      var calendarEl = document.getElementById('calendar');
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        events: events, // Add the events array directly as a property of the options object
-        dateClick: function(info) { // Event handler for date click
-          alert('Date: ' + info.dateStr); // Show the date string in an alert
-          if (info.resource) { // Check if a resource (e.g., event) is associated with the clicked date
-            alert('Resource ID: ' + info.resource.id); // Show the resource ID in an alert
-          }
-        }
-      });
-      calendar.render(); // Render the calendar after defining the options and events
-    });
-  </script>
+  
     <style>
         /* Adjust vertical navbar */
         .navbar-vertical {
@@ -92,7 +66,11 @@
                 z-index: 1000;
             }
         }
-
+        p, li {
+            font-size: 18px;
+            line-height: 1.5;
+            /*font-family: Lato, Roboto;*/
+        }
         /* Logo styles */
         .logo {
             font-size: 30px; /* Adjust as needed */
@@ -184,6 +162,30 @@
       padding: 100px 0; /* Adjust vertical padding as needed */
       text-align: center;
     }
+    .hero-section.res{
+        background-image: url('/static/img/hero/resources2.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff; /* Text color */
+      padding: 100px 0; /* Adjust vertical padding as needed */
+      text-align: center;
+    }
+    .hero-section.se{
+        background-image: url('/static/img/hero/soft-engr.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff; /* Text color */
+      padding: 100px 0; /* Adjust vertical padding as needed */
+      text-align: center;
+    }
+    .hero-section.se{
+        background-image: url('/static/img/hero/soft-engr.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff; /* Text color */
+      padding: 100px 0; /* Adjust vertical padding as needed */
+      text-align: center;
+    }
 
     .hero-content {
       max-width: 600px; /* Adjust max-width as needed */
@@ -265,7 +267,7 @@
             </li>
             
             <li class="nav-item">
-                <a class="nav-link" href="/dashboard/curriculum" title="Curriculum">
+                <a class="nav-link" href="/dashboard/overview" title="overview">
                     <i class="fas fa-graduation-cap navbar-icon"></i> <!-- Curriculum Icon -->
                 </a>
             </li>
@@ -319,7 +321,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="/dashboard/curriculum" title="Curriculum">
+                <a class="nav-link text-white" href="/dashboard/overview" title="Overview">
                     <i class="fas fa-graduation-cap navbar-icon" style="font-size: 0.875rem;"></i> <!-- Curriculum Icon -->
                     <span class="d-inline d-md-none">Curriculum</span>
                 </a>
