@@ -148,7 +148,42 @@
             object-fit: contain;
             margin-bottom: 10px;
         }
+        /* Custom styles for the navbar toggler */
+      /* Custom styles for the hero section */
+    .hero-section {
+      background-image: url('/static/img/hero/learncomfort.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff; /* Text color */
+      padding: 100px 0; /* Adjust vertical padding as needed */
+      text-align: center;
+    }
 
+    .hero-content {
+      max-width: 600px; /* Adjust max-width as needed */
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 48px; /* Adjust font size as needed */
+      margin-bottom: 20px; /* Adjust margin bottom as needed */
+    }
+
+    .hero-content p {
+      font-size: 18px; /* Adjust font size as needed */
+      margin-bottom: 40px; /* Adjust margin bottom as needed */
+    }
+
+    .btn-primary {
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -230,59 +265,54 @@
     </div>
 </nav>
 
-    <!-- Horizontal Navbar (Mobile View) -->
-<nav class="navbar navbar-light bg-dark navbar-horizontal d-md-none">
+<nav class="navbar navbar-light bg-dark navbar-horizontal d-md-none p-1">
     <div class="logo text-center">
-        <i class="fas fa-code"></i> <!-- Logo Icon -->
+        <img src="/static/img/logo-sym.svg" alt=""> <!-- Logo Icon -->
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon text-white"></span> <!-- Apply text-white class here -->
+    <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="/static/img/hamburger.svg" alt="Toggle Navigation" width="25" height="25"> <!-- Apply text-white class here -->
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav text-left"> <!-- Added text-left class -->
             <li class="nav-item">
-                <a class="nav-link active text-white" href="/dashboard/dashboard" title="Dashboard"> <!-- Added text-white class -->
-                    <i class="fas fa-home navbar-icon active-icon"></i> <!-- Dashboard Icon -->
+                <a class="nav-link active text-white" href="/dashboard/dashboard" title="Dashboard">
+                    <i class="fas fa-home navbar-icon active-icon" style="font-size: 0.875rem;"></i> <!-- Dashboard Icon -->
                     <span class="d-inline d-md-none">Dashboard</span>
                 </a>
             </li>
-            <hr class="bg-cyan"> <!-- Moved outside of nav-item -->
             <li class="nav-item">
-                <a class="nav-link text-white" href="/dashboard/learn_resources" title="Learning Resources"> <!-- Added text-white class -->
-                    <i class="fas fa-book navbar-icon"></i> <!-- Book Icon -->
+                <a class="nav-link text-white" href="/dashboard/learn_resources" title="Learning Resources">
+                    <i class="fas fa-book navbar-icon" style="font-size: 0.875rem;"></i> <!-- Book Icon -->
                     <span class="d-inline d-md-none">Learning Resources</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="/dashboard/tools" title="Tools"> <!-- Added text-white class -->
-                    <i class="fas fa-tools navbar-icon"></i> <!-- Tools Icon -->
+                <a class="nav-link text-white" href="/dashboard/tools" title="Tools">
+                    <i class="fas fa-tools navbar-icon" style="font-size: 0.875rem;"></i> <!-- Tools Icon -->
                     <span class="d-inline d-md-none">Tools</span>
                 </a>
             </li>
-            <hr class="bg-cyan"> <!-- Moved outside of nav-item -->
             <li class="nav-item">
-                <a class="nav-link text-white" href="/dashboard/curriculum" title="Curriculum"> <!-- Added text-white class -->
-                    <i class="fas fa-graduation-cap navbar-icon"></i> <!-- Curriculum Icon -->
+                <a class="nav-link text-white" href="/dashboard/curriculum" title="Curriculum">
+                    <i class="fas fa-graduation-cap navbar-icon" style="font-size: 0.875rem;"></i> <!-- Curriculum Icon -->
                     <span class="d-inline d-md-none">Curriculum</span>
                 </a>
             </li>
-            <hr class="bg-cyan"> <!-- Moved outside of nav-item -->
             <li class="nav-item">
-                <a class="nav-link text-white" href="/dashboard/connect" title="Connect"> <!-- Added text-white class -->
-                    <i class="fas fa-users navbar-icon"></i> <!-- Connect Icon -->
+                <a class="nav-link text-white" href="/dashboard/connect" title="Connect">
+                    <i class="fas fa-users navbar-icon" style="font-size: 0.875rem;"></i> <!-- Connect Icon -->
                     <span class="d-inline d-md-none">Connect</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="/dashboard/profile" title="Profile"> <!-- Added text-white class -->
-                    <i class="fas fa-user navbar-icon"></i> <!-- User Icon -->
+                <a class="nav-link text-white" href="/dashboard/profile" title="Profile">
+                    <i class="fas fa-user navbar-icon" style="font-size: 0.875rem;"></i> <!-- User Icon -->
                     <span class="d-inline d-md-none">Profile</span>
                 </a>
             </li>
-            <hr class="bg-cyan"> <!-- Moved outside of nav-item -->
             <li class="nav-item">
-                <a class="nav-link text-white" href="/dashboard/logout" title="Logout"> <!-- Added text-white class -->
-                    <i class="fas fa-sign-out-alt navbar-icon"></i> <!-- Logout Icon -->
+                <a class="nav-link text-white" href="/dashboard/logout" title="Logout">
+                    <i class="fas fa-sign-out-alt navbar-icon" style="font-size: 0.875rem;"></i> <!-- Logout Icon -->
                     <span class="d-inline d-md-none">Logout</span>
                 </a>
             </li>
@@ -292,25 +322,9 @@
 
 
 
-     <!-- Dropdown Menu for Mobile View -->
-     <li class="nav-item dropdown"> <!-- Added 'dropdown' class -->
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <!-- Added dropdown toggle -->
-            <i class="fas fa-bars navbar-icon text-white "></i> <!-- Hamburger Icon -->
-            <span class="d-inline d-md-none">Menu</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <!-- Dropdown Menu -->
-            <a class="dropdown-item" href="/dashboard">Dashboard</a>
-            <a class="dropdown-item" href="/dashboard/learn_resources">Learning Resources</a>
-            <a class="dropdown-item" href="/dashboard/tools">Tools</a>
-            <a class="dropdown-item" href="/dashboard/curriculum">Curriculum</a>
-            <a class="dropdown-item" href="/dashboard/profile">Profile</a>
-            <div class="dropdown-divider"></div> <!-- Divider -->
-            <a class="dropdown-item" href="/dashboard/logout">Logout</a>
-        </div>
-    </li>
 
     <!-- Content -->
-    <div class="container">
+    <div class="container container-fluid">
         {% block content %}
         <!-- Default content goes here -->
         {% endblock %}
