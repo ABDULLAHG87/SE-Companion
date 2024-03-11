@@ -212,6 +212,38 @@
       background-color: #0056b3;
       border-color: #0056b3;
     }
+    /*Accordion settings for FAQ*/
+    .accordion-item {
+            background-color: #f8f9fa;
+            border: none;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .accordion-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .accordion-header {
+            background-color: #f8f9fa;
+            border: none;
+        }
+        .accordion-header:hover {
+            cursor: pointer;
+        }
+        .accordion-header h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .accordion-body {
+            padding: 20px;
+        }
+        .accordion-body p {
+            margin-bottom: 0;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
