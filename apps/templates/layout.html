@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Your Title Here {% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   
+   
+    {% block styles %}
+        <!--Custom CSS-->
+
+    {% endblock %}
+  
+</head>  
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/static/img/logo.svg" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary me-2 btn-embossed btn-lg" href="/register"><i class="fas fa-user-plus"></i> Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="vertical-bar mx-2"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary btn-embossed btn-lg" href="/login"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% block content %}
+
+{% endblock %}
+    
+<footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="/static/img/logo-3.svg" alt="Your Logo" class="img-fluid mb-3">
+                <p>Empowering Your Digital Journey, One Click at a Time!</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/about" class="text-white">About</a></li>
+                    <li><a href="/contact" class="text-white">Contact</a></li>
+                    <li><a href="/login" class="text-white">Sign in</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Social Links</h5>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://github.com/ABDULLAHG87" class="social-link"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="hakeemabdullah87@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a href="@ABDULLAHIA18255" class="social-link"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Copyright and Designed by row -->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>&copy; 2024 Dalaktronixs. All rights reserved. | Designed by You</p>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </div>
+</footer>
+  <!-- end Footer Area
+
+    {%block js %} 
+
+    {% endblock %}
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+{% extends 'layout.html' %}
+{% block title %} About us {% endblock %}
+
+{% block styles %}
+<style>
+    .hero {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    .hero img {
+        width: 100%;
+        max-height:400px;
+    }
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    h1, h2, h3, h4, h5, h6{
+        font-family: "Catamaran", sans-serif;
+        font-weight: 900;
+    }
+    .border {
+        height: 2px;
+        margin: 20px auto 20px;
+        position: relative;
+        width: 80px;
+        background: #28ABE3;
+    }
+    .social-link {
+        font-size: 20px;
+        border: 2px solid #28ABE3;
+        border-radius: 50%;
+        padding: 10px;
+        color: #28ABE3;
+    }
+
+    .social-link:hover {
+        background-color: #28ABE3;
+        color: #fff;
+    }
+    
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Hero Image and Title -->
+<section class="hero">
+    <img src="/static/img/hero/contact-hero.jpg" alt="Hero Image">
+    <div class="hero-text">
+        <h1>Contact Us</h1>
+    </div>
+</section>
+<section id="connect" class="pt-5 pb-5">
+    <div class="title text-center">
+        <h1>Get in Touch</h1>
+        <p>The are amazing features of the Web Application. These features will make level you up from zero to Hero, by providing you with core functionalities every software engineers dream of </p>
+        <div class="border"></div>
+    </div>
+</section>
+<section id="contact-me" class="mt-5">
+    <div class="container">
+        <div class="row">
+            <!-- First Column -->
+            <div class="col-md-6 mb-4 text-center">
+                <!-- Picture of Me -->
+                <img src="/static/img/mypics.jpg" alt="Your Picture" class="img-fluid rounded-circle mb-3" style="max-width: 200px;">
+                <!-- Description of Me -->
+                <h4>Abdulhakeem Abdullahi</h4>
+                <p>I am a dedicated ALX Software Engineering Student and avid Ultralearner with a passion for research. Embracing challenges is integral to my learning journey, and I thrive on project development. I warmly welcome collaboration opportunities at any time. </p>
+
+                <!-- Social Links -->
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://github.com/ABDULLAHG87" class="social-link"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="hakeemabdullah87@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a href="@ABDULLAHIA18255" class="social-link"><i class="fab fa-twitter"></i></a></li>
+                    <!-- Add other social links here -->
+                </ul>
+            </div>
+            <!-- Second Column (Contact Form) -->
+            <div class="col-md-6 mb-4">
+                <h4>Contact Me</h4>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

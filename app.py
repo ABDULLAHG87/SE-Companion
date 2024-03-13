@@ -47,8 +47,17 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 @app.route('/')
+@app.route('/home')
 def index():
     return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -156,6 +165,9 @@ def tools():
 @app.route('/dashboard/overview')
 def overview():
     return render_template('dashboard/sengineer.html')
+@app.route('/dashboard/overview/python_dev')
+def python_dev():
+    return render_template('dashboard/python_dev.html')
 
 @app.route('/dashboard/logout')
 def logout():
