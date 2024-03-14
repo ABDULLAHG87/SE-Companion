@@ -1,39 +1,308 @@
 {% extends 'dashboard/base.html' %}
-
+{% block styles %}
+<style>
+    /* Hero Section */
+    .hero-section.py-dev{
+        background-image: url('/static/img/resources/python-dev.webp');
+        background-size: cover;
+        background-position: center;
+        color: #fff; /* Text color */
+        padding: 100px 0; /* Adjust vertical padding as needed */
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 600px; /* Adjust max-width as needed */
+        margin: 0 auto;
+    }
+    
+    .hero-content h1 {
+        font-size: 48px; /* Adjust font size as needed */
+        margin-bottom: 20px; /* Adjust margin bottom as needed */
+    }
+    
+    .hero-content p {
+        font-size: 18px; /* Adjust font size as needed */
+        margin-bottom: 40px; /* Adjust margin bottom as needed */
+    }
+    
+    /* Introduction Section */
+    #introduction-section {
+        background-color: #f8f9fa; /* Light grey background */
+        padding: 50px 0; /* Adjust padding as needed */
+    }
+    
+    /* Specializations Section */
+    #specializations {
+        background-color: #fff; /* White background */
+        padding: 50px 0; /* Adjust padding as needed */
+    }
+    
+    /* Key Concepts Section */
+    #key-concepts {
+        background-color: #f8f9fa; /* Light grey background */
+        padding: 50px 0; /* Adjust padding as needed */
+    }
+    
+    /* Core Skills Section */
+    #core-skills-section {
+        background-color: #fff; /* White background */
+        padding: 50px 0; /* Adjust padding as needed */
+    }
+    
+    /* Learning Path Section */
+    #learning-path-section {
+        background-color: #f8f9fa; /* Light grey background */
+        padding: 50px 0; /* Adjust padding as needed */
+    }
+    
+    /* Project Showcase Section */
+    #project-showcase-section {
+        background-color: #fff; /* White background */
+        padding: 50px 0; /* Adjust padding as needed */
+    }
+    
+    /* Career Opportunities Section */
+    #career-opportunities-section {
+        background-color: #f8f9fa; /* Light grey background */
+        padding: 50px 0; /* Adjust padding as needed */
+    }
+    
+    /* Community & Networking Section */
+    #community-section {
+        background-color: #fff; /* White background */
+        padding: 50px 0; /* Adjust padding as needed */
+    }
+    </style>
+{% endblock %}
 {% block content %}
 <body>
+    <!--Application Logo-->
+    <div class="col-md-12 mt-0 text-center">
+        <!--<h1 class="mt-5">Login</h1>-->
+        <img src="/static/img/logo-3.svg" alt="Logo" class="mt-5 mb-5"> 
+    </div>
     <!-- Hero Section -->
-    <section class="hero">
-        <img src="/static/img/resources/py-dev.webp" class="img-fluid" alt="Hero Image">
-        <div class="hero-text">
-            <h1>Python Developer Roadmap</h1>
-        </div>
+    <section class="hero container-fluid">
+        <div class="hero-section py-dev">
+            <div class="hero-content">
+              <h1 class="mt-5">Python Developer Roadmap</h1>
+              <p>Embark on your journey to becoming a Python Developer and unlock endless possibilities in software engineering.</p>
+              <!-- <a href="/dashboard" class="btn btn-primary btn-lg">Get Started</a> -->
+            </div>
+          </div>
     </section>
-    <section id="hero-section" class="py-5">
-        <div class="container">
-            <h1 class="text-center mb-4">Python Developer Roadmap</h1>
-            <p class="lead text-center">Your introduction to the world of Python development.</p>
-            <!-- Add hero image here -->
-        </div>
-    </section>
-
+    
     <!-- Introduction Section -->
     <section id="introduction-section" class="py-5">
         <div class="container">
-            <h2 class="mb-4">Introduction</h2>
-            <p>Introduce Python development and its significance.</p>
-            <!-- Add more content here -->
+            <h2 class="mb-4">Who Are Python Developers?</h2>
+            <p>Python developers are professionals who specialize in using the Python programming language to create software solutions for various purposes. They possess a deep understanding of Python syntax, libraries, and frameworks, allowing them to develop a wide range of applications, from web and mobile apps to data analysis tools and machine learning algorithms.</p>
+            <p>Python developers are skilled in writing clean, efficient, and maintainable code that meets the requirements of the project. They are proficient in leveraging Python's extensive standard library and third-party packages to streamline development and solve complex problems effectively.</p>
+            <p>Python developers often work in interdisciplinary teams, collaborating with designers, project managers, and other developers to deliver high-quality software products. They are adaptable problem solvers who can tackle challenges creatively and find innovative solutions to meet project objectives.</p>
+            <p>As technology continues to evolve, Python developers stay updated with the latest trends and advancements in the field. They participate in continuous learning, attend workshops, and contribute to open-source projects to enhance their skills and stay competitive in the industry.</p>
+            <p>In summary, Python developers are versatile professionals with expertise in utilizing the Python programming language to develop robust, scalable, and efficient software solutions that address the needs of businesses and organizations across various domains.</p>
         </div>
     </section>
 
-    <!-- Key Concepts Section -->
-    <section id="key-concepts-section" class="py-5">
-        <div class="container">
-            <h2 class="mb-4">Key Concepts</h2>
-            <p>Highlight fundamental concepts and principles.</p>
-            <!-- Add more content here -->
+    <!-- Specializations Section -->
+<section id="specializations">
+    <div class="container">
+        <h2 class="mb-4">What is your area of interest as a Python Developer</h2>
+        <p> When deciding on becoming a python developer, you must first spot out your area of interest. Python being an Open source language can be used to develop various applications and solve many problems. Here are some of the areas you can specialize in as a Python Developer.</p>
+
+<!-- Carousel of Cards -->
+<!-- Carousel of Cards -->
+<section id="specialization">
+    <div id="specializationsCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            <!-- First Carousel Item -->
+            <div class="carousel-item active">
+                <div class="row">
+                    <!-- Cards for the first carousel item -->
+                    <div class="col-md-3">
+                        <div class="card h-100 d-flex flex-column text-center">
+                            <img src="/static/img/resources/backend.png" class="card-img-top" alt="Frontend Engineering">
+                            <div class="card-body">
+                                <!-- Card Title -->
+                                <h5 class="card-title">Web Development</h5>
+                                <!-- Card Description -->
+                                <p class="card-text">Develop web applications using Python with frameworks like Django and Flask.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more cards for the first carousel item -->
+                    <div class="col-md-3">
+                        <div class="card h-100 d-flex flex-column text-center">
+                            <img src="/static/img/resources/data-science.png" class="card-img-top" alt="Backend">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Data Science</h5>
+                                <p class="card-text">Analyze and manipulate data efficiently using Python's powerful libraries like NumPy and Pandas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mt-4">
+                        <div class="card h-100 d-flex flex-column text-center">
+                            <img src="/static/img/resources/quality-test.png" class="card-img-top" alt="Quality Assurance">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Quality Testing</h5>
+                                <p class="card-text">Automate testing processes and ensure software quality with Python's testing frameworks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mt-4">
+                        <div class="card h-100 d-flex flex-column text-center">
+                            <img src="/static/img/resources/embedded2.png" class="card-img-top" alt="Embedded System">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Embedded Systems</h5>
+                                <p class="card-text">Develop software for microcontrollers and IoT devices using Python and low-level languages.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of First Carousel Item -->
+
+            <!-- Second Carousel Item -->
+            <div class="carousel-item">
+                <div class="row">
+                    <!-- Cards for the second carousel item -->
+                    <div class="col-md-3 mt-4">
+                        <div class="card h-100 d-flex flex-column text-center">
+                            <img src="/static/img/resources/game-dev.png" class="card-img-top" alt="ML and AI">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Game Development</h5>
+                                <p class="card-text">Create games with Python using libraries like Pygame and Panda3D.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mt-4">
+                        <div class="card h-100 d-flex flex-column text-center">
+                            <img src="/static/img/resources/webscraping.jpg" class="card-img-top" alt="ML and AI">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Web Scraping</h5>
+                                <p class="card-text">Extract data from websites efficiently using Python's web scraping libraries.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mt-4">
+                        <div class="card h-100 d-flex flex-column text-center">
+                            <img src="/static/img/resources/game-dev.png" class="card-img-top" alt="ML and AI">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">DevOps and Infrastructure</h5>
+                                <p class="card-text">Automate deployment processes and manage infrastructure using Python.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mt-4">
+                        <div class="card h-100 d-flex flex-column text-center">
+                            <img src="/static/img/resources/ml-ai.png" class="card-img-top" alt="ML and AI">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Machine Learning and AI</h5>
+                                <p class="card-text">Implement machine learning algorithms and build AI systems using Python's libraries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Second Carousel Item -->
+
         </div>
-    </section>
+        <!-- Carousel Controls -->
+        <a class="carousel-control-prev" href="#specializationsCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only text-primary">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#specializationsCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon " aria-hidden="true"></span>
+            <span class="sr-only text-primary">Next</span>
+        </a>
+    </div>
+    <!-- End of Carousel of Cards -->
+</section>
+
+<section id="key-concepts" class="py-5">
+    <div class="container">
+        <h2 class="mb-4">What are the Key Concept you must know</h2>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Syntax and Data Structures</h5>
+                        <p class="card-text">Understanding Python's syntax, data types, and control structures.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Functions and Modules</h5>
+                        <p class="card-text">Creation and usage of functions for code reuse, and working with modules for modular programming.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Object-Oriented Programming (OOP)</h5>
+                        <p class="card-text">Understanding OOP principles like encapsulation, inheritance, and polymorphism.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Libraries and Frameworks</h5>
+                        <p class="card-text">Familiarity with popular libraries and frameworks like NumPy, Pandas, Django, Flask, etc., for various development purposes such as data analysis, web development, and more.</p>
+                    </div>
+                </div>
+            </div><div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">File Handling and I/O</h5>
+                        <p class="card-text">Understanding how to read from and write to files, manipulate file content, and work with different file formats.</p>
+                    </div>
+                </div>
+            </div><div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Exception Handling</h5>
+                        <p class="card-text">Knowing how to handle errors and exceptions gracefully to ensure robust and fault-tolerant applications.</p>
+                    </div>
+                </div>
+            </div><div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Database Interaction</h5>
+                        <p class="card-text">Learning how to interact with databases using libraries like SQLite, SQLAlchemy, or Django ORM for data storage and retrieval</p>
+                    </div>
+                </div>
+            </div><div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Debugging and Testing</h5>
+                        <p class="card-text">Proficiency in debugging techniques and testing frameworks like pytest for ensuring code quality and reliability.</p>
+                    </div>
+                </div>
+            </div><div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Scraping and API Integration:</h5>
+                        <p class="card-text">Ability to retrieve data from websites through web scraping and interact with external APIs for data consumption and integration.</p>
+                    </div>
+                </div>
+            </div><div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Deployment and Version Control: </h5>
+                        <p class="card-text">Understanding deployment processes and version control systems like Git for managing project versions and collaboration. </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat the above structure for each key concept -->
+        </div>
+    </div>
 
     <!-- Core Skills Section -->
     <section id="core-skills-section" class="py-5">

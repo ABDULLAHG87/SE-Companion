@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css' rel='stylesheet' />
-  
     <style>
         /* Adjust vertical navbar */
         .navbar-vertical {
@@ -179,13 +178,14 @@
       text-align: center;
     }
     .hero-section.se{
-        background-image: url('/static/img/hero/soft-engr.jpg');
+      background-image: url('/static/img/hero/soft-engr.jpg');
       background-size: cover;
       background-position: center;
       color: #fff; /* Text color */
       padding: 100px 0; /* Adjust vertical padding as needed */
       text-align: center;
     }
+
 
     .hero-content {
       max-width: 600px; /* Adjust max-width as needed */
@@ -245,6 +245,9 @@
             margin-bottom: 0;
         }
     </style>
+    {% block styles %}
+    <!--Add custom styles-->
+    {% endblock %}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
           var events = [
