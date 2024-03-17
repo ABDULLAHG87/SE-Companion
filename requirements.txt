@@ -1,14 +1,12 @@
-Flask
-Flask SQAlchemy
-Flask-WTF
-Flask-Login
-Flask-Bcrypt
-Flask-Migrate
-Flask-Script
-Flask-Mail
-Flask-Bootstrap
-mysqlclient 
-Flask-User
-Flask-RESTful
-gunicorn
-Nginx
+alembic==1.13.1
+Flask==3.0.2
+Flask_Login==0.6.3
+Flask_Mail==0.9.1
+Flask_Migrate==4.0.5
+Flask_Script==2.0.6
+flask_sqlalchemy==3.1.1
+flask_wtf==1.2.1
+mysql_connector_repackaged==0.3.1
+Requests==2.31.0
+Werkzeug==3.0.1
+WTForms==3.1.2
