@@ -15,30 +15,46 @@
         background-color: #28ABE3;
         color: #fff;
     }
+    .jumbotron {
+            background-color: #007bff;
+            color: #fff;
+            padding: 80px 20px;
+            margin-bottom: 0;
+        }
+        .btn-primary {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+        .btn-primary:hover {
+            background-color: #138496;
+            border-color: #117a8b;
+        }
+        h1, h2, h3, h4, h5, h6{
+        font-family: "Catamaran", sans-serif;
+        font-weight: 900;
+    }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to LevelMeUP</h1>
+        <p class="lead">Empowering learners to reach new heights</p>
+    </div>
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <h1 class="text-center mb-4">About Your Project</h1>
-            <p class="lead">
-                Your project's mission and purpose statement can go here. Describe what inspired you to create the project and what problem it aims to solve. Make it engaging and relatable to your audience.
-            </p>
-            <p>
-                You can also include some personal anecdotes or experiences that led you to develop the project. Share your journey and the challenges you faced along the way. This helps users connect with you on a more personal level.
-            </p>
-            <p>
-                Finally, wrap up with a call to action, inviting users to explore more of your project or reach out to you for collaboration opportunities. Keep it friendly and inviting.
-            </p>
-            <p class="text-center">
-                <a href="/contact" class="btn btn-primary btn-lg">Contact Me</a>
-            </p>
+            <h2>Our Mission</h2>
+            <p>At LevelMeUP, our mission is to provide high-quality learning resources and tools to help learners of all levels and backgrounds achieve their educational goals. We believe that education is the key to personal and professional growth, and we're committed to making learning accessible, engaging, and rewarding for everyone.</p>
+            <h2>Our Story</h2>
+            <p>LevelMeUP was born out of a passion for learning and a desire to make a positive impact on the world. As lifelong learners ourselves, we understand the challenges and frustrations that often accompany the learning process. We've experienced firsthand the struggle to find reliable resources, stay motivated, and navigate the complexities of various subjects.</p>
+            <p>Driven by our own experiences, we set out to create a platform that addresses these challenges head-on. We've assembled a team of experts and educators who are dedicated to curating the best learning materials, developing innovative tools, and fostering a supportive community where learners can thrive.</p>
+            <h2>Join Us</h2>
+            <p>Ready to take your learning journey to the next level? Join us at LevelMeUP and unlock a world of knowledge, inspiration, and opportunity. Whether you're a student, professional, or lifelong learner, there's something here for you. Explore our resources, connect with like-minded individuals, and embark on a journey of discovery and growth.</p>
+            <a href="#" class="btn btn-primary btn-lg">Explore Resources</a>
         </div>
     </div>
 </div>
-
 
 {% endblock %}
 
