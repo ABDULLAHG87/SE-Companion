@@ -2,7 +2,7 @@ import os
 import random
 from flask import Flask, render_template, redirect, url_for, flash, request, session
 from flask_login import current_user, login_required
-from flask_session import Session
+#from flask_session import Session
 from flask_login import LoginManager, login_user, UserMixin
 from secompanion.apps.forms import LoginForm, RegistrationForm, ProfileForm, ForgotPasswordForm
 from secompanion.apps.models import User, db, Interest, Skill, Connection,Tool,Resource
@@ -36,7 +36,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:abdul4prof@localhost/secom
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SESSION_TYPE'] = 'filesystem'
 
-Session(app)
+#Session(app)
 db.init_app(app)
 migrate = Migrate(app, db)
 
