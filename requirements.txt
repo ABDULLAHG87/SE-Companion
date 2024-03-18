@@ -10,3 +10,7 @@ mysql_connector_repackaged==0.3.1
 Requests==2.31.0
 Werkzeug==3.0.1
 WTForms==3.1.2
+gunicorn==20.1.0
+Flask-Cors==4.0.0
+SQLAlchemy==2.0.23
+mysqlclient==2.2.1
