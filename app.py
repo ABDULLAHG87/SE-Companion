@@ -17,7 +17,7 @@ from secompanion.apps.methods import send_password_reset_email, filter_resources
 
 app = Flask(__name__, template_folder='apps/templates')
 app.static_folder = 'apps/static'
-
+# implementing app  for email configuration 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
@@ -29,12 +29,13 @@ mail = Mail(app)
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
+# implementing configuration for Database 
 app.config['SECRET_KEY'] = b'8\xc6\xef\xd8\x82\xf86\xe5R\x10\xb3\x9f\xb8k\xf0{\x88-\xc4\xde\x8eQ\x05;'
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:abdul4prof@localhost/secompanion'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SESSION_TYPE'] = 'filesystem'
+
 Session(app)
 db.init_app(app)
 migrate = Migrate(app, db)
@@ -42,6 +43,8 @@ migrate = Migrate(app, db)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
+#Creating various API endpoints for web application
+#Login endpoint
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
