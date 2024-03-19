@@ -453,36 +453,36 @@
 
 <script>
     // Function to filter sections based on search query
-    function filterSections() {
-        var searchQuery = document.getElementById("searchBar").value.toLowerCase();
-        var sections = document.querySelectorAll("section");
+function filterSections() {
+    var searchQuery = document.getElementById("searchBar").value.toLowerCase();
+    var sections = document.querySelectorAll("section");
 
-        sections.forEach(function(section) {
-            var sectionContent = section.textContent.toLowerCase();
-            var sectionTitle = section.querySelector("h2").textContent.toLowerCase();
-            if (sectionContent.includes(searchQuery) || sectionTitle.includes(searchQuery)) {
-                section.style.display = "block";
-            } else {
-                section.style.display = "none";
-            }
-        });
+    sections.forEach(function(section) {
+        var sectionContent = section.textContent.toLowerCase();
+        var sectionTitle = section.querySelector("h2").textContent.toLowerCase();
+        var isVisible = sectionContent.includes(searchQuery) || sectionTitle.includes(searchQuery);
+        
+        // Toggle visibility of the section based on the search query
+        section.style.display = isVisible ? "block" : "none";
+    });
+}
+
+// Function to navigate to selected section from dropdown menu
+function navigateToSection() {
+    var selectedSection = document.getElementById("sectionDropdown").value;
+    if (selectedSection !== "") {
+        window.location.href = selectedSection;
     }
+}
 
-    // Function to navigate to selected section from dropdown menu
-    function navigateToSection() {
-        var selectedSection = document.getElementById("sectionDropdown").value;
-        if (selectedSection !== "") {
-            window.location.href = selectedSection;
-        }
-    }
+// Add event listener to search button
+document.getElementById("searchButton").addEventListener("click", filterSections);
 
-    // Add event listener to search button
-    document.getElementById("searchButton").addEventListener("click", filterSections);
+// Add event listener to search bar for keyup event
+document.getElementById("searchBar").addEventListener("keyup", filterSections);
 
-    // Add event listener to search bar for keyup event
-    document.getElementById("searchBar").addEventListener("keyup", filterSections);
+// Add event listener to dropdown menu
+document.getElementById("sectionDropdown").addEventListener("change", navigateToSection);
 
-    // Add event listener to dropdown menu
-    document.getElementById("sectionDropdown").addEventListener("change", navigateToSection);
 </script>
 {% endblock %}
