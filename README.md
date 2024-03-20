@@ -17,6 +17,11 @@ The LevelMeUp projects is designed to have two Milestones based on the core func
 **Author LinkedIn:**
 - [Abdulhakeem Abdullahi Opeyemi](https://www.linkedin.com/in/abdullahi-abdulhakeem-opeyemi/)
 
+## Core Functionalities of the Project
+* Learning Resources Hub
+* Well Trailored Software Engineering Roadmaps
+* Software Engineering Tools Arsenal
+* Building Learning Network through Peer and Mentors Collaboration
 
 ## Installation
 To install the Learning Companion locally, follow these steps:
@@ -36,6 +41,9 @@ We welcome contributions from the community to improve and expand the Learning C
 5. Submit a pull request
 
 ## Screenshots of the Project
+!["Screenshot of the LevelMeUp Dashboard"](https://github.com/ABDULLAHG87/SE-Companion/blob/main/apps/static/img/screenshot/dashboard%20screen.PNG)
+
+!["Quicklinks of the Dashboard"](https://github.com/ABDULLAHG87/SE-Companion/blob/main/apps/static/img/screenshot/dashboard2.PNG)
 
 ## Related Projects
 The above project the main project executive for now, but with more features to be added to make 
