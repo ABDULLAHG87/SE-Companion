@@ -35,6 +35,8 @@ We welcome contributions from the community to improve and expand the Learning C
 4. Push to the branch: `git push origin feature/new-feature`
 5. Submit a pull request
 
+## Screenshots of the Project
+
 ## Related Projects
 The above project the main project executive for now, but with more features to be added to make 
 
