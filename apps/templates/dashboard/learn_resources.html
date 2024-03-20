@@ -24,118 +24,116 @@
           </div>
         </div>
       </div>
-    <div class="container mt-4">
-        <!-- Search Bar -->
-        <form id="searchForm" method="post">
-    <div class="row mb-4">
-        <div class="col-md-6">
-            <div class="input-group">
-                <input type="text" class="form-control" name="search" id="searchInput" placeholder="Search...">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
+      <section class="bg-light py-5">
+        <div class="container-fluid">
+            <h2 class="text-center mb-4">Programming Languages</h2>
+            <div class="row">
+                <!-- Add programming languages content here -->
+                <!-- JavaScript Card -->
+                <div class="col-md-4 mt-4">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/javascript.png" class="card-img-top" alt="JavaScript">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">JavaScript</h5>
+                            <p class="card-text">JavaScript is a programming language that is primarily used for scripting web pages and controlling web browsers. It is widely used for front-end development, back-end development, and building interactive web applications.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Python Card -->
+                <div class="col-md-4 mt-4">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/python.png" class="card-img-top" alt="Python">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Python</h5>
+                            <p class="card-text">Python is a high-level programming language known for its simplicity and readability. It is widely used in web development, data analysis, artificial intelligence, machine learning, scientific computing, and more.</p>
+                            <a href="/dashboard/py-resources" class="btn btn-primary mt-auto">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Java Card -->
+                <div class="col-md-4 mt-4">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/java.png" class="card-img-top" alt="Java">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Java</h5>
+                            <p class="card-text">Java is a widely-used programming language that is known for its portability, performance, and security features. It is used for developing a wide range of applications, including web applications, mobile apps, enterprise software, and more.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/cplus.png" class="card-img-top" alt="Java">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">C++</h5>
+                            <p class="card-text">Java is a widely-used programming language that is known for its portability, performance, and security features. It is used for developing a wide range of applications, including web applications, mobile apps, enterprise software, and more.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/csharp.png" class="card-img-top" alt="Java">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">C#</h5>
+                            C# is a versatile programming language developed by Microsoft. It is widely used for developing desktop applications, web applications, mobile apps, games, and more within the .NET framework.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Explore</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <div class="col-md-2">
-            <select class="form-control" name="type_filter">
-                <option selected disabled>Filter by Type</option>
-                <option>Video</option>
-                <option>Book</option>
-                <option>Article</option>
-                <option>Podcast</option>
-                <option>Cheatsheet</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <select class="form-control" name="category_filter">
-                <option selected disabled>Filter by Category</option>
-                {% for category in categories %}
-                <option>{{ category }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="col-md-2">
-            <select class="form-control" name="level_filter">
-                <option selected disabled>Filter by Level</option>
-                <option>Beginner</option>
-                <option>Intermediate</option>
-                <option>Expert</option>
-            </select>
-        </div>
-        <div class="col-md-12 mt-2">
-            <button type="button" id="applyFiltersButton" class="btn btn-primary">Apply Filters</button>
-        </div>
-    </div>
-</form>
-
-        
-     <!-- Resource Display -->
-    <div class="row">
-        {% for resource in resources %}
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">{{ resource.title }}</h5>
-                    <p class="card-text">Type: {{ resource.type }}</p>
-                    <p class="card-text">Category: {{ resource.category }}</p>
-                    <p class="card-text">Level: {{ resource.level }}</p>
-                    <a href="#" class="btn btn-primary">View</a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+    </section>
     
-        <!-- Pagination/Load More Section -->
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&laquo;</a>
-                        </li>
-                        <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">&raquo;</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        
-        <!-- User Feedback/Interaction Section -->
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="rating">Rate this resource:</label>
-                    <select class="form-control" id="rating">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+    <section class="bg-secondary py-5">
+        <div class="container-fluid">
+            <h2 class="text-center mb-4 text-white">Frameworks</h2>
+            <div class="row">
+                <!-- Add frameworks content here -->
+                <!-- React Card -->
+                <div class="col-md-4 mt-4">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/react.png" class="card-img-top" alt="React">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">React</h5>
+                            <p class="card-text">React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Angular Card -->
+                <div class="col-md-4 mt-4">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/angularjs.png" class="card-img-top" alt="Angular">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Angular</h5>
+                            <p class="card-text">Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vue.js Card -->
+                <div class="col-md-4 mt-4">
+                    <div class="card h-100 d-flex flex-column text-center">
+                        <img src="/static/img/thumbnails/vuejs.png" class="card-img-top" alt="Vue.js">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Vue.js</h5>
+                            <p class="card-text">Vue.js is an open-source model–view–viewmodel JavaScript framework for building user interfaces and single-page applications.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Explore</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="comment">Leave a comment:</label>
-                    <textarea class="form-control" id="comment" rows="3"></textarea>
-                </div>
-            </div>
         </div>
-        <div class="row mb-4">
-            <div class="col-md-12">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+    </section>
+    
+      <!-- Specializations Section -->
+      <section class="bg-light py-5">
+        <div class="container">
+          <h2 class="text-center mb-4">Specializations</h2>
+          <!-- Add specializations content here -->
         </div>
-    </div>
+      </section>
     
 {% endblock %}

@@ -180,21 +180,13 @@ categories = ["Web Development", "Data Science", "Python Development"]
 
 @app.route('/dashboard/learn_resources', methods=['GET', 'POST'])
 def learn_resources():
-    if request.method == 'POST':
-        search_query = request.form['search']
-        type_filter = request.form.get('type_filter')
-        category_filter = request.form.get('category_filter')
-        level_filter = request.form.get('level_filter')
-        filtered_resources = filter_resources(search_query, type_filter,
-                                              category_filter, level_filter,
-                                              resources)
-        return render_template('dashboard/learn_resources.html',
-                               resources=filtered_resources,
-                               categories=categories)
-    return render_template('dashboard/learn_resources.html',
-                           resources=resources, categories=categories)
+    return render_template('dashboard/learn_resources.html')
 
 
+@app.route('/dashboard/py-resources', methods=['GET', 'POST'])
+def py_resources():
+    return render_template('dashboard/py-resources.html')
+    
 @app.route('/dashboard/tools')
 def tools():
     return render_template('dashboard/tools.html')
