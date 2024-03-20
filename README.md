@@ -4,7 +4,7 @@
 The Learning Companion for Software Engineers is a comprehensive platform designed to support software engineers in their journey of continuous learning and skill development. Whether you're a seasoned developer looking to stay updated with the latest technologies or a beginner seeking guidance on where to start, our platform offers curated learning paths, recommended resources, practice exercises, and a thriving community to help you succeed in your career.
 
 
-![logo](/static/img/logo.png)
+![logo](https://github.com/ABDULLAHG87/SE-Companion/raw/main/static/img/logo.png)
 The LevelMeUp projects is designed to have two Milestones based on the core functionalities implementated 
 
 * Milestone 1: Build the core features and functionality of the platform including user authentication, learning paths, resources, and community forum.
