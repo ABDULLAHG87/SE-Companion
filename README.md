@@ -18,6 +18,19 @@ The LevelMeUp projects is designed to have two Milestones based on the core func
 **Author LinkedIn:**
 - [Abdulhakeem Abdullahi Opeyemi](https://www.linkedin.com/in/abdullahi-abdulhakeem-opeyemi/)
 
+## What inspires the project
+Building a learning companion for software engineers isn't just about writing code; it's about creating something that speaks to the heart of learning. It all started when I joined Cohort 10 of the ALX program. I saw many students excited to learn software engineering, but as time went on, fewer and fewer made it through.
+
+I noticed a big problem: there were so many tutorials and resources out there that it was overwhelming. People didn't know which ones to use or where to start, and it made learning really hard.
+
+I faced the same struggle. I deferred from the program three times because I couldn't find the right direction. It felt like being stuck in "Tutorial Hell," where there are too many options and not enough guidance.
+
+But from that frustration came an idea: to create a website where learners could find the right resources and follow a clear path to success in software engineering. It's about more than just learning—it's about finding your way in a confusing world and building something meaningful.
+
+And learning isn't something you do alone. It's better when you have friends and mentors to help you along the way. But finding those connections can be tough. That's why I want to build a platform where learners can meet others with similar goals and support each other.
+
+This project is about making learning easier and more fun for everyone. It's about bringing people together and helping them reach their dreams in the world of software engineering.
+
 ## Minimalist Core Functionalities of the Project
 * Learning Resources Hub
 * Well Trailored Software Engineering Roadmaps
