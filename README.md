@@ -17,11 +17,25 @@ The LevelMeUp projects is designed to have two Milestones based on the core func
 **Author LinkedIn:**
 - [Abdulhakeem Abdullahi Opeyemi](https://www.linkedin.com/in/abdullahi-abdulhakeem-opeyemi/)
 
-## Core Functionalities of the Project
+## Minimalist Core Functionalities of the Project
 * Learning Resources Hub
 * Well Trailored Software Engineering Roadmaps
 * Software Engineering Tools Arsenal
 * Building Learning Network through Peer and Mentors Collaboration
+
+## Technologies used for Building the Project
+* Front-end Technologies
+  * HTML and CSS
+  * Bootstrap 5
+  * JavaScript
+* Back-end Technologies
+  * Flask Microframe
+  * Database: MySQL or SQLite
+* DevOps Technologies:
+  * Gunicorn
+  * Render
+  * Dockers
+* Version Control System: GitHub
 
 ## Installation
 To install the Learning Companion locally, follow these steps:
@@ -42,11 +56,13 @@ We welcome contributions from the community to improve and expand the Learning C
 
 ## Screenshots of the Project
 !["Screenshot of the LevelMeUp Dashboard"](https://github.com/ABDULLAHG87/SE-Companion/blob/main/apps/static/img/screenshot/dashboard%20screen.PNG)
+**hero page and Navbar of the Dashboard**
 
 !["Quicklinks of the Dashboard"](https://github.com/ABDULLAHG87/SE-Companion/blob/main/apps/static/img/screenshot/dashboard2.PNG)
+**Quicklinks section of the Dashboard**
 
 ## Related Projects
-The above project the main project executive for now, but with more features to be added to make 
+The above project the main project executive for now, but with more features to be added to make the project more User -Friendly and interactive.
 
 ## Licensing
 This project is licensed under the [MIT License](LICENSE).
