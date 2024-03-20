@@ -4,7 +4,7 @@
 The Learning Companion for Software Engineers is a comprehensive platform designed to support software engineers in their journey of continuous learning and skill development. Whether you're a seasoned developer looking to stay updated with the latest technologies or a beginner seeking guidance on where to start, our platform offers curated learning paths, recommended resources, practice exercises, and a thriving community to help you succeed in your career.
 
 
-![logo](https://github.com/ABDULLAHG87/SE-Companion/tree/main/apps/static/img/logo.png)
+![logo](https://github.com/ABDULLAHG87/SE-Companion/blob/main/apps/static/img/logo.png)
 The LevelMeUp projects is designed to have two Milestones based on the core functionalities implementated 
 
 * Milestone 1: Build the core features and functionality of the platform including user authentication, learning paths, resources, and community forum.
@@ -12,17 +12,17 @@ The LevelMeUp projects is designed to have two Milestones based on the core func
 
 **Deployed Site:** [LevelMeUp](https://levelme-up.onrender.com/)
 
-**Final Project Blog Article:** [Empowering Software Engineers: Introducing our Learning Companion](https://www.learningcompanion.com/blog/final-project-article)
+**Final Project Blog Article:** [Empowering Software Engineers: Introducing our Learning Companion](https://www.linkedin.com/pulse/learning-resource-hub-abdullahi-abdulhakeem-mpk2f)
 
 **Author LinkedIn:**
-- [Abdulhakeem Abdullahi Opeymi]()
+- [Abdulhakeem Abdullahi Opeyemi](https://www.linkedin.com/in/abdullahi-abdulhakeem-opeyemi/)
 
 
 ## Installation
 To install the Learning Companion locally, follow these steps:
-1. Clone the repository: `git clone https://github.com/yourusername/learning-companion.git`
-2. Navigate to the project directory: `cd learning-companion`
-3. Install dependencies: `npm install`
+1. Clone the repository: `git clone https://github.com/ABDULLAHG87/SE-Companion.git`
+2. Navigate to the project directory: `cd SE-companion`
+3. Install dependencies: `pip install -r requirements.txt`
 
 ## Usage
 After installation, you can run the Learning Companion locally by executing the following command:
@@ -36,8 +36,7 @@ We welcome contributions from the community to improve and expand the Learning C
 5. Submit a pull request
 
 ## Related Projects
-- [Learning Companion Mobile App](https://github.com/yourusername/learning-companion-app) - Companion app for mobile devices to access learning resources on the go.
-- [Learning Companion Analytics Dashboard](https://github.com/yourusername/learning-companion-analytics) - Dashboard for tracking user engagement and performance metrics.
+The above project the main project executive for now, but with more features to be added to make 
 
 ## Licensing
 This project is licensed under the [MIT License](LICENSE).
